@@ -33,9 +33,7 @@ body {
     animation: fadeIn 0.6s ease-out forwards;
 }
 
-@keyframes fadeIn {
-    to { opacity: 1; }
-}
+@keyframes fadeIn { to { opacity: 1; } }
 
 /* HEADER */
 header {
@@ -69,7 +67,10 @@ h1 {
     font-weight: 800;
     color: var(--primary);
 }
-.subtext { margin-top: 10px; color: var(--muted); }
+.subtext {
+    margin-top: 10px;
+    color: var(--muted);
+}
 
 /* BUTTONS */
 .button-call {
@@ -99,8 +100,15 @@ h1 {
     color: var(--primary);
 }
 
-.section { margin-top: 40px; }
-.section h2 { font-size: 1.35rem; color: var(--primary); margin-bottom: 14px; }
+/* SECTIONS & CARDS */
+.section {
+    margin-top: 40px;
+}
+.section h2 {
+    font-size: 1.35rem;
+    color: var(--primary);
+    margin-bottom: 14px;
+}
 
 .card {
     background: var(--card);
@@ -110,6 +118,14 @@ h1 {
     margin-bottom: 14px;
     box-shadow: 0 10px 26px rgba(15,23,42,0.05);
 }
+
+.card h3 {
+    margin-bottom: 6px;
+    color: var(--primary);
+}
+
+ul { padding-left: 20px; }
+li + li { margin-top: 4px; }
 
 /* BILDER */
 .image-grid {
@@ -124,6 +140,7 @@ h1 {
     object-fit: cover;
     border-radius: 14px;
     border: 1px solid var(--border);
+    box-shadow: 0 10px 24px rgba(15,23,42,0.10);
 }
 
 /* KONTAKT */
@@ -132,6 +149,8 @@ h1 {
     padding: 20px;
     background: white;
     border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 26px rgba(15,23,42,0.05);
 }
 
 /* FOOTER */
@@ -171,27 +190,85 @@ footer {
     <img src="logo.png" class="nav-logo" alt="Lopes Facility & Support Services">
 </header>
 
-
 <div class="container">
 
-<h1>Saubere Infrastruktur, klare Abläufe.<br>Für einen reibungslosen Betrieb.</h1>
-<p class="subtext">
-    Lopes Facility & Support Services bietet professionelle Reinigungs-, Support- und Logistikdienstleistungen für
-    Unternehmen, Immobilien und Baustellen in Basel und Umgebung.
-</p>
+    <h1>Saubere Infrastruktur, klare Abläufe.<br>Für einen reibungslosen Betrieb.</h1>
+    <p class="subtext">
+        Lopes Facility &amp; Support Services bietet professionelle Reinigungs-, Support- und Logistikdienstleistungen
+        für Unternehmen, Immobilien und Baustellen in Basel und Umgebung.
+    </p>
 
-<a href="tel:+491701523720" class="button-call">Direkt anrufen: +49 170 1523720</a>
-<a href="mailto:info@lopes-facility.ch" class="button-mail">Anfrage per E-Mail senden</a>
+    <a href="tel:+491701523720" class="button-call">Direkt anrufen: +49 170 1523720</a>
+    <a href="mailto:info@lopes-facility.ch" class="button-mail">Anfrage per E-Mail senden</a>
 
-<div class="section">
-    <h2>Leistungen</h2>
+    <!-- LEISTUNGEN -->
+    <div class="section">
+        <h2>Leistungen</h2>
 
-    <div class="card">
-        <h3>Reinigung & Unterhalt</h3>
-        <ul>
-            <li>Reinigung von Büro-, Sozial- & Sanitärcontainern</li>
-            <li>Unterhaltsreinigung in Büros & Objekten</li>
-            <li>Baureinigung & Übergaben</li>
-            <li>Containerflächen-Reinigung</li>
-        </ul>
-   
+        <div class="card">
+            <h3>Reinigung &amp; Unterhalt</h3>
+            <ul>
+                <li>Reinigung von Büro-, Sozial- &amp; Sanitärcontainern</li>
+                <li>Unterhaltsreinigung in Büros &amp; Objekten</li>
+                <li>Baureinigung &amp; Übergaben nach Projektabschluss</li>
+                <li>Reinigung von Containerflächen</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Support- &amp; Logistikleistungen</h3>
+            <ul>
+                <li>Materialbereitstellung &amp; einfache Transportaufgaben</li>
+                <li>Objekt- &amp; Betriebssupport</li>
+                <li>Unterstützung bei logistischen Abläufen</li>
+                <li>Temporäre Unterstützung während Projektphasen</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- EINBLICKE -->
+    <div class="section">
+        <h2>Einblicke in unsere Arbeiten</h2>
+        <div class="image-grid">
+            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=900" alt="">
+            <img src="https://images.unsplash.com/photo-1581091215367-59ab6c8a9a80?q=80&w=900" alt="">
+            <img src="https://images.unsplash.com/photo-1596079890744-556ddec9a634?q=80&w=900" alt="">
+            <img src="https://images.unsplash.com/photo-1597004891231-dc9c9c3c1f6a?q=80&w=900" alt="">
+            <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?q=80&w=900" alt="">
+            <img src="https://images.unsplash.com/photo-1604014237800-1c9102c219da?q=80&w=900" alt="">
+        </div>
+    </div>
+
+    <!-- KONTAKT -->
+    <div class="contact-card" id="kontakt">
+        <h2>Kontakt &amp; Öffnungszeiten</h2>
+
+        <p><strong>E-Mail:</strong> <a href="mailto:info@lopes-facility.ch">info@lopes-facility.ch</a></p>
+        <p><strong>Telefon:</strong> <a href="tel:+491701523720">+49 170 1523720</a></p>
+
+        <p><strong>Adresse:</strong><br>
+            Lopes Facility &amp; Support Services, A. Lopes<br>
+            c/o ExpertFid &amp; Audit AG<br>
+            Marktgasse 8, 4051 Basel
+        </p>
+
+        <p><strong>Öffnungszeiten:</strong><br>
+            Mo–Fr: 08:00–18:00<br>
+            Sa: 09:00–15:00
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    <div class="footer-inner">
+        © 2025 Lopes Facility &amp; Support Services · Basel &amp; Umgebung
+        <div class="footer-links">
+            <a href="impressum.html">Impressum</a> ·
+            <a href="datenschutz.html">Datenschutz</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
