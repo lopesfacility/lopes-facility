@@ -3,32 +3,243 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Datenschutz – Lopes Facility</title>
+
+<title>Lopes Facility & Support Services</title>
+<meta name="description" content="Reinigungs-, Facility- & Logistiksupport für Unternehmen, Baustellen und Immobilien in der Region Basel. Professionell, zuverlässig und flexibel.">
 
 <style>
-body {
-    font-family: system-ui;
-    padding: 30px;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
-    opacity: 0;
-    animation: fadeIn .6s forwards ease-out;
+:root {
+    --primary: #25134d;
+    --accent1: #ff6a3d;
+    --accent2: #9b4baf;
+    --accent3: #4055d4;
+    --bg: #f7f6fb;
+    --text: #1c1630;
+    --muted: #6b7280;
+    --border: #e0e2f0;
+    --card: #ffffff;
 }
-@keyframes fadeIn { to { opacity: 1; } }
-a { color: #25134d; }
+
+/* RESET */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 22px 10px 10px 10px;
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    margin: 0 auto;
+}
+
+@media (min-width: 900px) {
+    .nav-logo { max-width: 420px; }
+}
+
+/* LAYOUT */
+.container {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 18px 16px 60px;
+}
+
+/* TEXT */
+h1 {
+    font-size: clamp(1.9rem, 3vw, 2.3rem);
+    font-weight: 800;
+    color: var(--primary);
+}
+.subtext { margin-top: 10px; color: var(--muted); }
+
+/* BUTTONS */
+.button-call {
+    display: block;
+    margin-top: 24px;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-size: 1.12rem;
+    font-weight: 700;
+    border-radius: 12px;
+    text-decoration: none;
+    background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
+    box-shadow: 0 12px 24px rgba(37,19,77,0.28);
+}
+
+.button-mail {
+    margin-top: 12px;
+    padding: 14px;
+    display: block;
+    text-align: center;
+    border-radius: 12px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--primary);
+}
+
+.section { margin-top: 40px; }
+.section h2 { font-size: 1.35rem; color: var(--primary); margin-bottom: 14px; }
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 14px;
+    margin-bottom: 14px;
+    box-shadow: 0 10px 26px rgba(15,23,42,0.05);
+}
+
+/* BILDER */
+.image-grid {
+    margin-top: 22px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+.image-grid img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+}
+
+/* KONTAKT */
+.contact-card {
+    margin-top: 40px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 50px;
+    padding: 30px 20px;
+    background: white;
+    border-top: 1px solid var(--border);
+}
+
+.footer-inner {
+    max-width: 940px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--muted);
+}
+
+.footer-links {
+    margin-top: 8px;
+    font-size: 0.92rem;
+}
+
+.footer-links a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0 6px;
+}
+.footer-links a:hover { text-decoration: underline; }
 </style>
 </head>
 
+
 <body>
 
-<h1>Datenschutzerklärung</h1>
+<header>
+    <img src="logo.png" class="nav-logo">
+</header>
 
-<p><strong>Server-Logfiles:</strong> Anonyme technische Daten beim Aufruf.</p>
-<p><strong>Kontaktaufnahme:</strong> Daten werden nur zur Bearbeitung gespeichert.</p>
-<p><strong>Cookies:</strong> Diese Seite nutzt keine.</p>
 
-<p><a href="index.html">Zurück zur Startseite</a></p>
+<div class="container">
+
+<h1>Saubere Infrastruktur, klare Abläufe.<br>Für einen reibungslosen Betrieb.</h1>
+<p class="subtext">
+    Lopes Facility & Support Services bietet professionelle Reinigungs-, Support- und Logistikdienstleistungen für
+    Unternehmen, Immobilien und Baustellen in Basel und Umgebung.
+</p>
+
+<a href="tel:+491701523720" class="button-call">Direkt anrufen: +49 170 1523720</a>
+<a href="mailto:info@lopes-facility.ch" class="button-mail">Anfrage per E-Mail senden</a>
+
+<div class="section">
+    <h2>Leistungen</h2>
+
+    <div class="card">
+        <h3>Reinigung & Unterhalt</h3>
+        <ul>
+            <li>Reinigung von Büro-, Sozial- & Sanitärcontainern</li>
+            <li>Unterhaltsreinigung in Büros & Objekten</li>
+            <li>Baureinigung & Übergaben</li>
+            <li>Containerflächen-Reinigung</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>Support- & Logistikleistungen</h3>
+        <ul>
+            <li>Materialbereitstellung & Transport</li>
+            <li>Objekt- & Betriebssupport</li>
+            <li>Logistische Abläufe</li>
+            <li>Temporäre Projektunterstützung</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Einblicke in unsere Arbeiten</h2>
+    <div class="image-grid">
+        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=900">
+        <img src="https://images.unsplash.com/photo-1581091215367-59ab6c8a9a80?q=80&w=900">
+        <img src="https://images.unsplash.com/photo-1596079890744-556ddec9a634?q=80&w=900">
+        <img src="https://images.unsplash.com/photo-1597004891231-dc9c9c3c1f6a?q=80&w=900">
+        <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?q=80&w=900">
+        <img src="https://images.unsplash.com/photo-1604014237800-1c9102c219da?q=80&w=900">
+    </div>
+</div>
+
+<div class="contact-card">
+    <h2>Kontakt</h2>
+    <p><strong>E-Mail:</strong> info@lopes-facility.ch</p>
+    <p><strong>Telefon:</strong> +49 170 1523720</p>
+    <p><strong>Adresse:</strong><br>
+    Lopes Facility & Support Services, A. Lopes<br>
+    Marktgasse 8, 4051 Basel</p>
+</div>
+
+</div>
+
+
+<footer>
+    <div class="footer-inner">
+        © 2025 Lopes Facility & Support Services
+        <div class="footer-links">
+            <a href="impressum.html">Impressum</a> ·
+            <a href="datenschutz.html">Datenschutz</a>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
