@@ -60,7 +60,7 @@ header {
 /* Desktop – Logo größer */
 @media (min-width: 900px) {
     .nav-logo {
-        max-width: 420px;  /* vorher 360, jetzt präsenter */
+        max-width: 420px;  /* präsente Größe auf Desktop */
     }
 }
 
@@ -164,7 +164,7 @@ li + li {
 }
 
 /* =========================================
-   BILDER-GRID (harmonisiert)
+   BILDER-GRID
 ========================================= */
 
 .image-grid {
@@ -224,17 +224,54 @@ li + li {
 }
 
 /* =========================================
+   RECHTLICHES (IMPRESSUM / DATENSCHUTZ)
+========================================= */
+
+.legal-note {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-top: 12px;
+}
+
+/* =========================================
    FOOTER
 ========================================= */
 
 footer {
     margin-top: 40px;
-    padding: 22px;
+    padding: 18px 16px 24px;
     font-size: 0.85rem;
     text-align: center;
     color: var(--muted);
     border-top: 1px solid var(--border);
     background: #ffffff;
+}
+
+.footer-inner {
+    max-width: 940px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-links a {
+    color: var(--primary);
+    text-decoration: none;
+    margin: 0 4px;
+    font-weight: 500;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .footer-inner {
+        flex-direction: column;
+    }
 }
 </style>
 </head>
@@ -246,7 +283,7 @@ footer {
      LOGOBEREICH
 ========================================= -->
 <header>
-    <!-- Wenn du das Logo als Datei im Repo hast, nenn es z.B. logo.png und ersetze unten die src-URL durch "logo.png" -->
+    <!-- Wenn du das Logo lokal im Repo hast, nenn es z.B. logo.png -->
     <img src="logo.png"
          alt="Lopes Facility & Support Services Logo"
          class="nav-logo">
@@ -274,7 +311,7 @@ footer {
     <!-- =========================================
          LEISTUNGEN
     ========================================= -->
-    <div class="section">
+    <div class="section" id="leistungen">
         <h2>Leistungen</h2>
 
         <div class="card">
@@ -300,9 +337,9 @@ footer {
 
 
     <!-- =========================================
-         BILDER (harmonisiert)
+         BILDER
     ========================================= -->
-    <div class="section">
+    <div class="section" id="arbeiten">
         <h2>Einblicke in unsere Arbeiten</h2>
 
         <div class="image-grid">
@@ -319,7 +356,7 @@ footer {
     <!-- =========================================
          KONTAKT
     ========================================= -->
-    <div class="contact-card">
+    <div class="contact-card" id="kontakt">
         <h2>Kontakt &amp; Öffnungszeiten</h2>
 
         <p><strong>E-Mail:</strong> <a href="mailto:info@lopes-facility.ch">info@lopes-facility.ch</a></p>
@@ -335,11 +372,109 @@ footer {
         Samstag: 09:00 – 15:00 Uhr</p>
     </div>
 
+
+    <!-- =========================================
+         IMPRESSUM
+    ========================================= -->
+    <div class="section" id="impressum">
+        <h2>Impressum</h2>
+
+        <div class="card">
+            <p><strong>Verantwortlich für den Inhalt dieser Website:</strong><br>
+            Lopes Facility &amp; Support Services, A. Lopes<br>
+            c/o ExpertFid &amp; Audit AG, Zweigniederlassung Basel<br>
+            Marktgasse 8<br>
+            4051 Basel<br>
+            Schweiz</p>
+
+            <p><strong>Kontakt:</strong><br>
+            Telefon: +49 170 1523720<br>
+            E-Mail: <a href="mailto:info@lopes-facility.ch">info@lopes-facility.ch</a></p>
+
+            <p><strong>Art des Unternehmens:</strong><br>
+            Dienstleistungsunternehmen im Bereich Reinigung, Facility- &amp; Logistiksupport.</p>
+
+            <p><strong>Haftung für Inhalte:</strong><br>
+            Die Inhalte dieser Seite wurden mit grösster Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit
+            und Aktualität der Inhalte wird keine Gewähr übernommen. Verpflichtungen zur Entfernung oder Sperrung
+            der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.</p>
+
+            <p><strong>Haftung für Links:</strong><br>
+            Soweit diese Website Links zu externen Webseiten Dritter enthält, haben wir auf deren Inhalte keinen
+            Einfluss. Für diese fremden Inhalte übernehmen wir keine Gewähr. Für die Inhalte der verlinkten Seiten
+            ist stets der jeweilige Anbieter oder Betreiber verantwortlich.</p>
+
+            <p><strong>Urheberrecht:</strong><br>
+            Die auf dieser Website verwendeten Texte, Layouts und Grafiken unterliegen dem Urheberrecht. Eine
+            Vervielfältigung oder Verwendung in anderen elektronischen oder gedruckten Publikationen ist ohne
+            ausdrückliche Zustimmung nicht gestattet.</p>
+
+            <p class="legal-note">
+                Hinweis: Dieses Impressum wurde nach bestem Wissen erstellt, ersetzt jedoch keine individuelle
+                rechtliche Beratung. Je nach Unternehmensform und Umsatzsituation können zusätzliche Angaben
+                erforderlich sein.
+            </p>
+        </div>
+    </div>
+
+
+    <!-- =========================================
+         DATENSCHUTZ
+    ========================================= -->
+    <div class="section" id="datenschutz">
+        <h2>Datenschutzhinweise</h2>
+
+        <div class="card">
+            <p><strong>Verantwortliche Stelle:</strong><br>
+            Lopes Facility &amp; Support Services, A. Lopes<br>
+            E-Mail: <a href="mailto:info@lopes-facility.ch">info@lopes-facility.ch</a></p>
+
+            <p><strong>1. Aufruf der Website</strong><br>
+            Beim Aufruf dieser Website werden durch den Hosting-Provider automatisch Informationen in sogenannten
+            Server-Logfiles gespeichert. Hierzu können gehören: verwendeter Browser, Betriebssystem, Referrer-URL,
+            Uhrzeit des Seitenaufrufs sowie die IP-Adresse in gekürzter bzw. anonymisierter Form. Diese Daten dienen
+            der technischen Bereitstellung und Sicherheit des Angebots und werden nicht zu Marketingzwecken ausgewertet.</p>
+
+            <p><strong>2. Kontakt per Telefon oder E-Mail</strong><br>
+            Wenn Sie uns telefonisch oder per E-Mail kontaktieren, werden die von Ihnen mitgeteilten Daten
+            (insbesondere Name, Kontaktdaten, Inhalte der Anfrage) zur Bearbeitung der Anfrage und für
+            allfällige Rückfragen gespeichert. Eine Weitergabe an Dritte erfolgt nur, soweit dies für die
+            Bearbeitung erforderlich ist (z.&nbsp;B. bei Zusammenarbeit mit Partnerunternehmen auf Projekten)
+            oder eine gesetzliche Pflicht besteht.</p>
+
+            <p><strong>3. Cookies und Tracking</strong><br>
+            Auf dieser Website werden derzeit keine Cookies zu Analyse- oder Marketingzwecken eingesetzt.
+            Es kommen keine externen Tracking-Dienste (z.&nbsp;B. Analytics) zum Einsatz.</p>
+
+            <p><strong>4. Speicherdauer</strong><br>
+            Personenbezogene Daten werden nur so lange gespeichert, wie es für den jeweiligen Zweck
+            (z.&nbsp;B. Angebotserstellung, Projektabwicklung, gesetzliche Aufbewahrungspflichten) erforderlich ist.</p>
+
+            <p><strong>5. Ihre Rechte</strong><br>
+            Sie haben im Rahmen der anwendbaren gesetzlichen Bestimmungen das Recht auf Auskunft über die zu
+            Ihrer Person gespeicherten Daten, auf Berichtigung, Löschung oder Einschränkung der Verarbeitung sowie
+            gegebenenfalls auf Widerspruch gegen die Verarbeitung. Entsprechende Anfragen können an die oben genannte
+            Kontaktadresse gerichtet werden.</p>
+
+            <p class="legal-note">
+                Diese Datenschutzhinweise sollen einen Überblick geben und erheben keinen Anspruch auf Vollständigkeit.
+                Je nach Einzelfall und weiterer technischer Ausgestaltung der Website können zusätzliche Informationspflichten
+                bestehen.
+            </p>
+        </div>
+    </div>
+
 </div>
 
 
 <footer>
-    © 2025 Lopes Facility &amp; Support Services · Basel &amp; Umgebung
+    <div class="footer-inner">
+        <div>© 2025 Lopes Facility &amp; Support Services · Basel &amp; Umgebung</div>
+        <div class="footer-links">
+            <a href="#impressum">Impressum</a> ·
+            <a href="#datenschutz">Datenschutz</a>
+        </div>
+    </div>
 </footer>
 
 </body>
