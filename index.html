@@ -476,29 +476,61 @@
                 grid-template-columns: minmax(0, 1fr);
                 margin-top: 18px;
             }
+
             .grid-2 {
                 grid-template-columns: minmax(0, 1fr);
             }
+
             .why-grid {
                 grid-template-columns: minmax(0, 1fr);
             }
+
             .contact-grid {
                 grid-template-columns: minmax(0, 1fr);
             }
+
             .nav-right {
                 display: none;
             }
+
             .nav-toggle {
                 display: block;
             }
+
+            /* NAV/LOGO mobil optimieren */
+            .nav {
+                padding: 6px 12px;
+            }
+
+            .nav-left {
+                gap: 6px;
+            }
+
+            .nav-logo {
+                height: 32px;          /* kleineres Logo auf Handy */
+            }
+
+            .nav-title {
+                font-size: 14px;
+                line-height: 1.2;
+            }
+
+            .nav-sub {
+                display: none;         /* Untertitel ausblenden */
+            }
+
             main {
                 padding-top: 18px;
             }
         }
 
-        @media (max-width: 580px) {
-            .gallery {
-                grid-template-columns: minmax(0, 1fr);
+        @media (max-width: 480px) {
+            .nav {
+                padding: 6px 10px;
+            }
+
+            .nav-title {
+                font-size: 13px;
             }
         }
     </style>
