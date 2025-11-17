@@ -350,6 +350,28 @@ footer {
 .footer-links a:hover {
     text-decoration: underline;
 }
+
+/* MOBILE: zentrierter Text */
+@media (max-width: 900px) {
+    body, main, section, .card, .hero, .hero-shell, .highlight-card, footer {
+        text-align: center;
+    }
+
+    /* Listen lesbar lassen, aber mittig platzieren */
+    ul {
+        display: inline-block;
+        text-align: left;
+        margin: 0 auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .chip-row {
+        justify-content: center;
+    }
+}
 </style>
 </head>
 
@@ -475,7 +497,7 @@ footer {
         </div>
     </section>
 
-    <!-- EINBLICKE (hier später deine eigenen Bilder einsetzen) -->
+    <!-- EINBLICKE -->
     <section class="section" aria-labelledby="einblicke">
         <div class="section-label">Einblicke</div>
         <h2 id="einblicke">Einblicke in unsere Arbeiten</h2>
@@ -504,8 +526,8 @@ footer {
         </p>
 
         <p><strong>Öffnungszeiten:</strong><br>
-            Mo-Fr: 08:00–18:00<br>
-            Sa:    09:00–15:00
+            Mo–Fr: 08:00–18:00<br>
+            Sa: 09:00–15:00
         </p>
     </section>
 
