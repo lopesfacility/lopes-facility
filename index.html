@@ -64,10 +64,10 @@
         }
 
         .nav-logo {
-            height: 48px;
-            width: auto;
+            max-width: 260px;   /* maximale Breite Logo */
+            width: 100%;        /* skaliert responsiv */
+            height: auto;       /* Verhältnis bleibt korrekt */
             display: block;
-            max-width: 100%;
         }
 
         /* MAIN / LAYOUT */
@@ -293,7 +293,7 @@
 
 <header>
     <div class="nav">
-        <!-- Nur Logo, Desktop & Mobile -->
+        <!-- Nur Logo -->
         <img src="logo.png" alt="Lopes Facility & Support Services Logo" class="nav-logo">
     </div>
 </header>
