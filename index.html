@@ -21,27 +21,19 @@
 }
 
 /* RESET */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
     font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
     background: var(--bg);
     color: var(--text);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* =========================================
-   HEADER MIT LOGO
-========================================= */
-
+/* HEADER */
 header {
     text-align: center;
     padding: 22px 10px 10px 10px;
@@ -51,48 +43,39 @@ header {
 
 .nav-logo {
     width: 100%;
-    max-width: 260px;   /* Mobile */
+    max-width: 260px;
     height: auto;
     display: block;
     margin: 0 auto;
 }
 
-/* Desktop – Logo größer */
 @media (min-width: 900px) {
     .nav-logo {
-        max-width: 420px;  /* präsente Größe auf Desktop */
+        max-width: 420px;
     }
 }
 
-/* =========================================
-   SEITENBREITE
-========================================= */
-
+/* LAYOUT */
 .container {
     max-width: 940px;
     margin: 0 auto;
     padding: 18px 16px 60px;
 }
 
-/* =========================================
-   TITELBEREICH / TYPO
-========================================= */
-
+/* TEXT */
 h1 {
     font-size: clamp(1.9rem, 3vw, 2.3rem);
     font-weight: 800;
     color: var(--primary);
-    letter-spacing: 0.01em;
 }
 
 .subtext {
     margin-top: 10px;
     color: var(--muted);
     font-size: 1.03rem;
-    max-width: 60rem;
 }
 
-/* CTA */
+/* BUTTONS */
 .button-call {
     display: block;
     margin-top: 24px;
@@ -120,23 +103,15 @@ h1 {
     color: var(--primary);
 }
 
-.button-mail:hover {
-    background: #f9fafb;
-}
+.button-mail:hover { background: #f9fafb; }
 
-/* =========================================
-   LEISTUNGEN
-========================================= */
-
-.section {
-    margin-top: 40px;
-}
+/* CARDS */
+.section { margin-top: 40px; }
 
 .section h2 {
     font-size: 1.35rem;
     color: var(--primary);
     margin-bottom: 14px;
-    letter-spacing: 0.03em;
 }
 
 .card {
@@ -149,24 +124,14 @@ h1 {
 }
 
 .card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     color: var(--primary);
 }
 
-ul {
-    padding-left: 20px;
-    color: var(--muted);
-}
+ul { padding-left: 20px; color: var(--muted); }
+li + li { margin-top: 4px; }
 
-li + li {
-    margin-top: 4px;
-}
-
-/* =========================================
-   BILDER-GRID
-========================================= */
-
+/* GALERIE */
 .image-grid {
     margin-top: 22px;
     display: grid;
@@ -176,12 +141,12 @@ li + li {
 
 .image-grid img {
     width: 100%;
-    border-radius: 14px;
     height: 170px;
     object-fit: cover;
+    border-radius: 14px;
     border: 1px solid var(--border);
     box-shadow: 0 10px 24px rgba(15,23,42,0.10);
-    transition: transform 0.16s ease-out, box-shadow 0.16s ease-out;
+    transition: .16s;
 }
 
 .image-grid img:hover {
@@ -190,21 +155,14 @@ li + li {
 }
 
 @media (max-width: 900px) {
-    .image-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .image-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 600px) {
-    .image-grid {
-        grid-template-columns: 1fr;
-    }
+    .image-grid { grid-template-columns: 1fr; }
 }
 
-/* =========================================
-   KONTAKT
-========================================= */
-
+/* KONTAKT */
 .contact-card {
     margin-top: 40px;
     background: var(--card);
@@ -214,268 +172,193 @@ li + li {
     box-shadow: 0 10px 26px rgba(15,23,42,0.05);
 }
 
-.contact-card p {
-    margin-bottom: 8px;
-    color: var(--muted);
+/* POPUP */
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    padding: 20px;
 }
 
-.contact-card strong {
-    color: var(--primary);
+.popup-box {
+    background: white;
+    max-width: 650px;
+    width: 100%;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.25);
 }
 
-/* =========================================
-   RECHTLICHES (IMPRESSUM / DATENSCHUTZ)
-========================================= */
-
-.legal-note {
-    font-size: 0.9rem;
-    color: var(--muted);
-    margin-top: 12px;
+.close-btn {
+    margin-top: 22px;
+    padding: 12px 16px;
+    border: none;
+    background: var(--primary);
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-/* =========================================
-   FOOTER
-========================================= */
-
+/* FOOTER */
 footer {
     margin-top: 40px;
-    padding: 18px 16px 24px;
+    padding: 22px;
     font-size: 0.85rem;
     text-align: center;
     color: var(--muted);
     border-top: 1px solid var(--border);
-    background: #ffffff;
-}
-
-.footer-inner {
-    max-width: 940px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: center;
-    align-items: center;
 }
 
 .footer-links a {
     color: var(--primary);
     text-decoration: none;
-    margin: 0 4px;
-    font-weight: 500;
+    margin: 0 6px;
+    font-weight: 600;
 }
-
-.footer-links a:hover {
-    text-decoration: underline;
-}
-
-@media (max-width: 600px) {
-    .footer-inner {
-        flex-direction: column;
-    }
-}
+.footer-links a:hover { text-decoration: underline; }
 </style>
 </head>
 
 
 <body>
 
-<!-- =========================================
-     LOGOBEREICH
-========================================= -->
 <header>
-    <!-- Wenn du das Logo lokal im Repo hast, nenn es z.B. logo.png -->
-    <img src="logo.png"
-         alt="Lopes Facility & Support Services Logo"
-         class="nav-logo">
+    <img src="logo.png" alt="Lopes Facility & Support Services Logo" class="nav-logo">
 </header>
 
 
 <div class="container">
 
-    <!-- =========================================
-         TITEL
-    ========================================= -->
-    <h1>Saubere Infrastruktur, klare Abläufe.<br>Für einen reibungslosen Betrieb.</h1>
+<h1>Saubere Infrastruktur, klare Abläufe.<br>Für einen reibungslosen Betrieb.</h1>
 
-    <p class="subtext">
-        Lopes Facility &amp; Support Services bietet professionelle Reinigungs-, Support- und Logistikdienstleistungen
-        für Unternehmen, Immobilien und Baustellen in Basel und Umgebung. Der Fokus liegt auf verlässlichen,
-        planbaren Einsätzen und klar definierten Abläufen.
-    </p>
+<p class="subtext">
+    Lopes Facility & Support Services bietet professionelle Reinigungs-, Support- und Logistikdienstleistungen für
+    Unternehmen, Immobilien und Baustellen in Basel und Umgebung.
+</p>
 
-    <!-- CALL BUTTON -->
-    <a href="tel:+491701523720" class="button-call">Direkt anrufen: +49 170 1523720</a>
-    <a href="mailto:info@lopes-facility.ch" class="button-mail">Anfrage per E-Mail senden</a>
+<a href="tel:+491701523720" class="button-call">Direkt anrufen: +49 170 1523720</a>
+<a href="mailto:info@lopes-facility.ch" class="button-mail">Anfrage per E-Mail senden</a>
 
+<div class="section">
+    <h2>Leistungen</h2>
 
-    <!-- =========================================
-         LEISTUNGEN
-    ========================================= -->
-    <div class="section" id="leistungen">
-        <h2>Leistungen</h2>
-
-        <div class="card">
-            <h3>Reinigung &amp; Unterhalt</h3>
-            <ul>
-                <li>Reinigung von Büro-, Sozial- &amp; Sanitärcontainern</li>
-                <li>Unterhaltsreinigung in Büros &amp; Objekten</li>
-                <li>Baureinigung &amp; Übergaben nach Projektabschluss</li>
-                <li>Reinigung von Containerflächen auf Baustellen</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>Support- &amp; Logistikleistungen</h3>
-            <ul>
-                <li>Materialbereitstellung &amp; einfache Transportaufgaben auf der Baustelle</li>
-                <li>Objekt- &amp; Betriebssupport nach Absprache</li>
-                <li>Unterstützung bei kleineren logistischen Abläufen</li>
-                <li>Temporäre Unterstützung während intensiver Projektphasen</li>
-            </ul>
-        </div>
+    <div class="card">
+        <h3>Reinigung & Unterhalt</h3>
+        <ul>
+            <li>Reinigung von Büro-, Sozial- & Sanitärcontainern</li>
+            <li>Unterhaltsreinigung in Büros & Objekten</li>
+            <li>Baureinigung & Übergaben nach Projektabschluss</li>
+            <li>Reinigung von Containerflächen</li>
+        </ul>
     </div>
 
-
-    <!-- =========================================
-         BILDER
-    ========================================= -->
-    <div class="section" id="arbeiten">
-        <h2>Einblicke in unsere Arbeiten</h2>
-
-        <div class="image-grid">
-            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=900" alt="Reinigung von Büroflächen">
-            <img src="https://images.unsplash.com/photo-1581091215367-59ab6c8a9a80?q=80&w=900" alt="Mitarbeiter bei Reinigungsarbeiten">
-            <img src="https://images.unsplash.com/photo-1596079890744-556ddec9a634?q=80&w=900" alt="Baustellencontainer und Infrastruktur">
-            <img src="https://images.unsplash.com/photo-1597004891231-dc9c9c3c1f6a?q=80&w=900" alt="Facility Management im Einsatz">
-            <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?q=80&w=900" alt="Logistik & Materialbereitstellung">
-            <img src="https://images.unsplash.com/photo-1604014237800-1c9102c219da?q=80&w=900" alt="Saubere und funktionale Arbeitsbereiche">
-        </div>
+    <div class="card">
+        <h3>Support- & Logistikleistungen</h3>
+        <ul>
+            <li>Materialbereitstellung & einfache Transportaufgaben</li>
+            <li>Objekt- & Betriebssupport</li>
+            <li>Unterstützung bei logistischen Abläufen</li>
+            <li>Temporäre Unterstützung bei Projektphasen</li>
+        </ul>
     </div>
+</div>
 
+<div class="section">
+    <h2>Einblicke in unsere Arbeiten</h2>
 
-    <!-- =========================================
-         KONTAKT
-    ========================================= -->
-    <div class="contact-card" id="kontakt">
-        <h2>Kontakt &amp; Öffnungszeiten</h2>
-
-        <p><strong>E-Mail:</strong> <a href="mailto:info@lopes-facility.ch">info@lopes-facility.ch</a></p>
-        <p><strong>Telefon:</strong> <a href="tel:+491701523720">+49 170 1523720</a></p>
-
-        <p><strong>Adresse:</strong><br>
-        Lopes Facility &amp; Support Services, A. Lopes<br>
-        c/o ExpertFid &amp; Audit AG, Zweigniederlassung Basel<br>
-        Marktgasse 8, 4051 Basel, Schweiz</p>
-
-        <p><strong>Öffnungszeiten:</strong><br>
-        Montag – Freitag: 08:00 – 18:00 Uhr<br>
-        Samstag: 09:00 – 15:00 Uhr</p>
+    <div class="image-grid">
+        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=900">
+        <img src="https://images.unsplash.com/photo-1581091215367-59ab6c8a9a80?q=80&w=900">
+        <img src="https://images.unsplash.com/photo-1596079890744-556ddec9a634?q=80&w=900">
+        <img src="https://images.unsplash.com/photo-1597004891231-dc9c9c3c1f6a?q=80&w=900">
+        <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?q=80&w=900">
+        <img src="https://images.unsplash.com/photo-1604014237800-1c9102c219da?q=80&w=900">
     </div>
+</div>
+
+<div class="contact-card" id="kontakt">
+    <h2>Kontakt & Öffnungszeiten</h2>
+
+    <p><strong>E-Mail:</strong> info@lopes-facility.ch</p>
+    <p><strong>Telefon:</strong> +49 170 1523720</p>
+
+    <p><strong>Adresse:</strong><br>
+    Lopes Facility & Support Services, A. Lopes<br>
+    c/o ExpertFid & Audit AG<br>
+    Marktgasse 8, 4051 Basel</p>
+
+    <p><strong>Öffnungszeiten:</strong><br>
+    Mo–Fr: 08:00–18:00<br>
+    Sa: 09:00–15:00</p>
+</div>
+
+</div>
 
 
-    <!-- =========================================
-         IMPRESSUM
-    ========================================= -->
-    <div class="section" id="impressum">
+<!-- IMPRESSUM POPUP -->
+<div id="popupImpressum" class="popup-overlay" onclick="closePopup(event)">
+    <div class="popup-box">
         <h2>Impressum</h2>
+        <p><strong>Lopes Facility & Support Services – A. Lopes</strong><br>
+        c/o ExpertFid & Audit AG<br>
+        Marktgasse 8<br>
+        4051 Basel, Schweiz</p>
 
-        <div class="card">
-            <p><strong>Verantwortlich für den Inhalt dieser Website:</strong><br>
-            Lopes Facility &amp; Support Services, A. Lopes<br>
-            c/o ExpertFid &amp; Audit AG, Zweigniederlassung Basel<br>
-            Marktgasse 8<br>
-            4051 Basel<br>
-            Schweiz</p>
+        <p><strong>Kontakt:</strong><br>
+        Telefon: +49 170 1523720<br>
+        E-Mail: info@lopes-facility.ch</p>
 
-            <p><strong>Kontakt:</strong><br>
-            Telefon: +49 170 1523720<br>
-            E-Mail: <a href="mailto:info@lopes-facility.ch">info@lopes-facility.ch</a></p>
-
-            <p><strong>Art des Unternehmens:</strong><br>
-            Dienstleistungsunternehmen im Bereich Reinigung, Facility- &amp; Logistiksupport.</p>
-
-            <p><strong>Haftung für Inhalte:</strong><br>
-            Die Inhalte dieser Seite wurden mit grösster Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit
-            und Aktualität der Inhalte wird keine Gewähr übernommen. Verpflichtungen zur Entfernung oder Sperrung
-            der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.</p>
-
-            <p><strong>Haftung für Links:</strong><br>
-            Soweit diese Website Links zu externen Webseiten Dritter enthält, haben wir auf deren Inhalte keinen
-            Einfluss. Für diese fremden Inhalte übernehmen wir keine Gewähr. Für die Inhalte der verlinkten Seiten
-            ist stets der jeweilige Anbieter oder Betreiber verantwortlich.</p>
-
-            <p><strong>Urheberrecht:</strong><br>
-            Die auf dieser Website verwendeten Texte, Layouts und Grafiken unterliegen dem Urheberrecht. Eine
-            Vervielfältigung oder Verwendung in anderen elektronischen oder gedruckten Publikationen ist ohne
-            ausdrückliche Zustimmung nicht gestattet.</p>
-
-            <p class="legal-note">
-                Hinweis: Dieses Impressum wurde nach bestem Wissen erstellt, ersetzt jedoch keine individuelle
-                rechtliche Beratung. Je nach Unternehmensform und Umsatzsituation können zusätzliche Angaben
-                erforderlich sein.
-            </p>
-        </div>
+        <button class="close-btn" onclick="closeImpressum()">Schliessen</button>
     </div>
+</div>
 
+<!-- DATENSCHUTZ POPUP -->
+<div id="popupDatenschutz" class="popup-overlay" onclick="closePopup(event)">
+    <div class="popup-box">
+        <h2>Datenschutz</h2>
+        <p><strong>1. Server-Logfiles:</strong><br>
+        Beim Aufruf dieser Website speichert der Hosting-Provider technische Daten.</p>
 
-    <!-- =========================================
-         DATENSCHUTZ
-    ========================================= -->
-    <div class="section" id="datenschutz">
-        <h2>Datenschutzhinweise</h2>
+        <p><strong>2. Kontaktaufnahme:</strong><br>
+        Personenbezogene Daten werden nur zur Bearbeitung gespeichert.</p>
 
-        <div class="card">
-            <p><strong>Verantwortliche Stelle:</strong><br>
-            Lopes Facility &amp; Support Services, A. Lopes<br>
-            E-Mail: <a href="mailto:info@lopes-facility.ch">info@lopes-facility.ch</a></p>
+        <p><strong>3. Cookies:</strong><br>
+        Diese Seite verwendet keine Cookies oder Tracking.</p>
 
-            <p><strong>1. Aufruf der Website</strong><br>
-            Beim Aufruf dieser Website werden durch den Hosting-Provider automatisch Informationen in sogenannten
-            Server-Logfiles gespeichert. Hierzu können gehören: verwendeter Browser, Betriebssystem, Referrer-URL,
-            Uhrzeit des Seitenaufrufs sowie die IP-Adresse in gekürzter bzw. anonymisierter Form. Diese Daten dienen
-            der technischen Bereitstellung und Sicherheit des Angebots und werden nicht zu Marketingzwecken ausgewertet.</p>
-
-            <p><strong>2. Kontakt per Telefon oder E-Mail</strong><br>
-            Wenn Sie uns telefonisch oder per E-Mail kontaktieren, werden die von Ihnen mitgeteilten Daten
-            (insbesondere Name, Kontaktdaten, Inhalte der Anfrage) zur Bearbeitung der Anfrage und für
-            allfällige Rückfragen gespeichert. Eine Weitergabe an Dritte erfolgt nur, soweit dies für die
-            Bearbeitung erforderlich ist (z.&nbsp;B. bei Zusammenarbeit mit Partnerunternehmen auf Projekten)
-            oder eine gesetzliche Pflicht besteht.</p>
-
-            <p><strong>3. Cookies und Tracking</strong><br>
-            Auf dieser Website werden derzeit keine Cookies zu Analyse- oder Marketingzwecken eingesetzt.
-            Es kommen keine externen Tracking-Dienste (z.&nbsp;B. Analytics) zum Einsatz.</p>
-
-            <p><strong>4. Speicherdauer</strong><br>
-            Personenbezogene Daten werden nur so lange gespeichert, wie es für den jeweiligen Zweck
-            (z.&nbsp;B. Angebotserstellung, Projektabwicklung, gesetzliche Aufbewahrungspflichten) erforderlich ist.</p>
-
-            <p><strong>5. Ihre Rechte</strong><br>
-            Sie haben im Rahmen der anwendbaren gesetzlichen Bestimmungen das Recht auf Auskunft über die zu
-            Ihrer Person gespeicherten Daten, auf Berichtigung, Löschung oder Einschränkung der Verarbeitung sowie
-            gegebenenfalls auf Widerspruch gegen die Verarbeitung. Entsprechende Anfragen können an die oben genannte
-            Kontaktadresse gerichtet werden.</p>
-
-            <p class="legal-note">
-                Diese Datenschutzhinweise sollen einen Überblick geben und erheben keinen Anspruch auf Vollständigkeit.
-                Je nach Einzelfall und weiterer technischer Ausgestaltung der Website können zusätzliche Informationspflichten
-                bestehen.
-            </p>
-        </div>
+        <button class="close-btn" onclick="closeDatenschutz()">Schliessen</button>
     </div>
-
 </div>
 
 
 <footer>
     <div class="footer-inner">
-        <div>© 2025 Lopes Facility &amp; Support Services · Basel &amp; Umgebung</div>
+        © 2025 Lopes Facility & Support Services · Basel & Umgebung
         <div class="footer-links">
-            <a href="#impressum">Impressum</a> ·
-            <a href="#datenschutz">Datenschutz</a>
+            <a href="#" onclick="openImpressum()">Impressum</a> ·
+            <a href="#" onclick="openDatenschutz()">Datenschutz</a>
         </div>
     </div>
 </footer>
+
+
+<script>
+function openImpressum(){ document.getElementById("popupImpressum").style.display = "flex"; }
+function closeImpressum(){ document.getElementById("popupImpressum").style.display = "none"; }
+
+function openDatenschutz(){ document.getElementById("popupDatenschutz").style.display = "flex"; }
+function closeDatenschutz(){ document.getElementById("popupDatenschutz").style.display = "none"; }
+
+function closePopup(e) {
+    if(e.target.classList.contains("popup-overlay")){
+        e.target.style.display = "none";
+    }
+}
+</script>
 
 </body>
 </html>
