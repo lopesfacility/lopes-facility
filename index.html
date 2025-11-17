@@ -11,7 +11,7 @@
 :root {
     --primary: #25134d;
     --accent1: #ff6a3d;
-    --accent2: #9b4baf;
+    --accent2: #ff854a;
     --accent3: #4055d4;
     --bg: #f7f6fb;
     --text: #1c1630;
@@ -56,48 +56,128 @@ header {
 
 /* LAYOUT */
 .container {
-    max-width: 940px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 18px 16px 60px;
 }
 
-/* TEXT */
-h1 {
-    font-size: clamp(1.9rem, 3vw, 2.3rem);
+/* HERO */
+.hero-topline {
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.74rem;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+
+.hero {
+    margin-top: 8px;
+    display: grid;
+    gap: 22px;
+}
+
+@media (min-width: 960px) {
+    .hero {
+        grid-template-columns: minmax(0,2.1fr) minmax(0,1.5fr);
+        align-items: stretch;
+    }
+}
+
+.hero-title {
+    font-size: clamp(1.9rem, 3.1vw, 2.5rem);
     font-weight: 800;
     color: var(--primary);
+    line-height: 1.25;
 }
-.subtext {
+.hero-title span {
+    background: linear-gradient(90deg, var(--accent1), var(--accent3));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero-subtext {
+    margin-top: 16px;
+    color: var(--muted);
+    max-width: 42rem;
+    font-size: 0.98rem;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 20px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, var(--accent1), var(--accent2));
+    color: #fff;
+    box-shadow: 0 12px 24px rgba(244, 90, 50, 0.35);
+}
+
+.btn-secondary {
+    background: #fff;
+    color: var(--primary);
+    border-color: var(--border);
+}
+
+.hero-note {
     margin-top: 10px;
+    font-size: 0.8rem;
     color: var(--muted);
 }
 
-/* BUTTONS */
-.button-call {
-    display: block;
-    margin-top: 24px;
-    padding: 15px;
-    text-align: center;
-    color: white;
-    font-size: 1.12rem;
-    font-weight: 700;
-    border-radius: 12px;
-    text-decoration: none;
-    background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
-    box-shadow: 0 12px 24px rgba(37,19,77,0.28);
+/* HIGHLIGHT CARD (SCHWERPUNKTE) */
+.highlight-card {
+    background: radial-gradient(circle at top left, #ffe1ce, #f9e6ff, #f5f0ff);
+    border-radius: 20px;
+    padding: 18px 20px;
+    border: 1px solid rgba(255,255,255,0.9);
+    box-shadow: 0 12px 30px rgba(37,19,77,0.12);
 }
 
-.button-mail {
-    margin-top: 12px;
-    padding: 14px;
-    display: block;
-    text-align: center;
-    border-radius: 12px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    font-weight: 600;
-    text-decoration: none;
-    color: var(--primary);
+.highlight-title {
+    font-size: 0.9rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+}
+
+.highlight-text {
+    font-size: 0.9rem;
+    color: #3b3550;
+    margin-bottom: 14px;
+}
+
+.chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.chip {
+    font-size: 0.78rem;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.9);
+    border: 1px solid rgba(255,255,255,0.6);
+    color: #3a3453;
 }
 
 /* SECTIONS & CARDS */
@@ -107,7 +187,13 @@ h1 {
 .section h2 {
     font-size: 1.35rem;
     color: var(--primary);
-    margin-bottom: 14px;
+    margin-bottom: 10px;
+}
+
+.section-lead {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 16px;
 }
 
 .card {
@@ -162,7 +248,7 @@ footer {
 }
 
 .footer-inner {
-    max-width: 940px;
+    max-width: 1100px;
     margin: 0 auto;
     text-align: center;
     color: var(--muted);
@@ -192,18 +278,68 @@ footer {
 
 <div class="container">
 
-    <h1>Saubere Infrastruktur, klare Abläufe.<br>Für einen reibungslosen Betrieb.</h1>
-    <p class="subtext">
-        Lopes Facility &amp; Support Services bietet professionelle Reinigungs-, Support- und Logistikdienstleistungen
-        für Unternehmen, Immobilien und Baustellen in Basel und Umgebung.
-    </p>
+    <div class="hero-topline">
+        DIENSTLEISTUNGEN FÜR UNTERNEHMEN, BAUSTELLEN &amp; IMMOBILIEN
+    </div>
 
-    <a href="tel:+491701523720" class="button-call">Direkt anrufen: +49 170 1523720</a>
-    <a href="mailto:info@lopes-facility.ch" class="button-mail">Anfrage per E-Mail senden</a>
+    <div class="hero">
+        <!-- linke Seite -->
+        <div>
+            <h1 class="hero-title">
+                Saubere Infrastruktur, klare Abläufe.<br>
+                Für einen reibungslosen <span>Betrieb.</span>
+            </h1>
+
+            <p class="hero-subtext">
+                Lopes Facility &amp; Support Services bietet professionelle Reinigungs-, Support- und
+                Logistikdienstleistungen für Unternehmen, Baustellen und Immobilien in Basel und Umgebung.
+                Der Fokus liegt auf verlässlichen, planbaren Einsätzen mit klar definierten Abläufen.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="mailto:info@lopes-facility.ch?subject=Offertanfrage" class="btn btn-primary">
+                    Offerte anfragen
+                </a>
+                <a href="tel:+491701523720" class="btn btn-secondary">
+                    Direkt anrufen: +49 170 1523720
+                </a>
+            </div>
+
+            <p class="hero-note">
+                Einsätze hauptsächlich im Raum Basel &amp; Umgebung – weitere Standorte nach Absprache.
+            </p>
+        </div>
+
+        <!-- rechte Seite: Schwerpunkte -->
+        <aside class="highlight-card">
+            <div class="highlight-title">Schwerpunkte</div>
+            <p class="highlight-text">
+                Unterstützung dort, wo eine saubere und funktionierende Infrastruktur die Basis für den laufenden
+                Betrieb ist – insbesondere bei temporären Anlagen, Baustellen und kleineren Geschäftseinheiten.
+            </p>
+
+            <div class="chip-row">
+                <span class="chip">Unterhaltsreinigung</span>
+                <span class="chip">Sanitär- &amp; Bürocontainer</span>
+                <span class="chip">Baureinigung</span>
+                <span class="chip">Objekt- &amp; Betriebssupport</span>
+                <span class="chip">Logistikunterstützung</span>
+            </div>
+
+            <div class="chip-row">
+                <span class="chip">Planbare Intervalle</span>
+                <span class="chip">Projektbezogene Einsätze</span>
+            </div>
+        </aside>
+    </div>
 
     <!-- LEISTUNGEN -->
     <div class="section">
         <h2>Leistungen</h2>
+        <p class="section-lead">
+            Lopes Facility &amp; Support Services kombiniert Reinigungsleistungen mit praktischer Unterstützung im
+            täglichen Betrieb. Typische Aufgabenbereiche:
+        </p>
 
         <div class="card">
             <h3>Reinigung &amp; Unterhalt</h3>
@@ -250,7 +386,7 @@ footer {
         </div>
     </div>
 
-    <!-- EINBLICKE -->
+    <!-- EINBLICKE (Platzhalter, später deine Bilder) -->
     <div class="section">
         <h2>Einblicke in unsere Arbeiten</h2>
         <div class="image-grid">
