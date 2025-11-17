@@ -9,7 +9,6 @@
     <style>
         :root {
             --primary: #25134d;
-            --primary-soft: #f4f0ff;
             --accent1: #ff6a3d;
             --accent2: #9b4baf;
             --accent3: #4055d4;
@@ -35,6 +34,7 @@
             background: var(--bg);
             color: var(--text);
             line-height: 1.6;
+            overflow-x: hidden; /* Seitliches Scrollen verhindern */
         }
 
         a {
@@ -42,7 +42,7 @@
             color: inherit;
         }
 
-        /* HEADER */
+        /* HEADER – nur Logo */
 
         header {
             position: sticky;
@@ -56,108 +56,18 @@
 
         .nav {
             max-width: 1120px;
-            margin: auto;
+            margin: 0 auto;
             padding: 10px 16px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center; /* Logo in der Mitte */
         }
 
         .nav-logo {
-            height: 50px;
+            height: 48px;
             width: auto;
             display: block;
-        }
-
-        .nav-right {
-            display: flex;
-            gap: 22px;
-            align-items: center;
-            font-size: 15px;
-        }
-
-        .nav-link {
-            color: var(--muted);
-            font-weight: 500;
-            position: relative;
-            padding-bottom: 2px;
-        }
-
-        .nav-link::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            height: 2px;
-            width: 0;
-            background: linear-gradient(90deg,var(--accent1),var(--accent3));
-            transition: width 0.2s ease-out;
-        }
-
-        .nav-link:hover {
-            color: var(--primary);
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .nav-badge {
-            background: var(--primary-soft);
-            border-radius: 999px;
-            padding: 4px 12px;
-            border: 1px solid var(--border);
-            color: var(--primary);
-            font-size: 11px;
-            letter-spacing: .05em;
-            text-transform: uppercase;
-        }
-
-        /* Mobile */
-
-        .nav-toggle {
-            display: none;
-            border: 1px solid var(--border);
-            background: white;
-            border-radius: 10px;
-            padding: 6px 10px;
-        }
-
-        .nav-toggle span {
-            display: block;
-            height: 2px;
-            width: 22px;
-            background: var(--primary);
-            margin: 4px 0;
-        }
-
-        .nav-mobile {
-            display: none;
-            background: white;
-            border-top: 1px solid var(--border);
-        }
-
-        .nav-mobile-inner {
-            max-width: 1120px;
-            padding: 12px 18px 16px;
-            margin: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            font-size: 16px;
-        }
-
-        .nav-mobile a {
-            color: var(--muted);
-        }
-        .nav-mobile a:hover {
-            color: var(--primary);
-        }
-
-        @media(max-width:850px){
-            .nav-right { display:none; }
-            .nav-toggle { display:block; }
-            .nav-logo { height: 44px; }
+            max-width: 100%;
         }
 
         /* MAIN / LAYOUT */
@@ -261,7 +171,7 @@
         }
 
         .hero-side {
-            background: var(--card);
+            background: #ffffff;
             border-radius: 14px;
             border: 1px solid var(--border);
             padding: 16px 18px;
@@ -291,7 +201,7 @@
         /* KARTEN / LISTEN */
 
         .card {
-            background: var(--card);
+            background: #ffffff;
             border: 1px solid var(--border);
             padding: 18px 20px;
             border-radius: 12px;
@@ -384,39 +294,10 @@
 
 <header>
     <div class="nav">
-        <!-- Logo alleine links -->
+        <!-- Nur das Logo -->
         <img src="logo.png" alt="Lopes Facility & Support Services Logo" class="nav-logo">
-
-        <!-- Desktop-Navigation rechts -->
-        <div class="nav-right">
-            <a href="#leistungen" class="nav-link">Leistungen</a>
-            <a href="#ueber" class="nav-link">Über uns</a>
-            <a href="#kontakt" class="nav-link">Kontakt</a>
-            <span class="nav-badge">Basel & Umgebung</span>
-        </div>
-
-        <!-- Mobile Button -->
-        <button class="nav-toggle" onclick="toggleNav()">
-            <span></span><span></span><span></span>
-        </button>
-    </div>
-
-    <!-- Mobile-Menü -->
-    <div class="nav-mobile" id="nav-mobile">
-        <div class="nav-mobile-inner">
-            <a href="#leistungen" onclick="toggleNav()">Leistungen</a>
-            <a href="#ueber" onclick="toggleNav()">Über uns</a>
-            <a href="#kontakt" onclick="toggleNav()">Kontakt</a>
-        </div>
     </div>
 </header>
-
-<script>
-    function toggleNav(){
-        const m = document.getElementById("nav-mobile");
-        m.style.display = (m.style.display === "block") ? "none" : "block";
-    }
-</script>
 
 <main>
 
