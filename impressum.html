@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum – Lopes Facility & Support Services</title>
+
+<style>
+:root {
+    --primary: #25134d;
+    --accent1: #ff6a3d;
+    --accent2: #9b4baf;
+    --accent3: #4055d4;
+    --bg: #f7f6fb;
+    --text: #1c1630;
+    --muted: #6b7280;
+    --border: #e0e2f0;
+    --card: #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn { to { opacity: 1; } }
+
+header {
+    text-align: center;
+    padding: 22px 10px 10px 10px;
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    margin: 0 auto;
+}
+
+@media (min-width: 900px) {
+    .nav-logo { max-width: 420px; }
+}
+
+.main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px 16px 60px;
+}
+
+h1 {
+    font-size: clamp(2rem, 3vw, 2.4rem);
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 18px;
+}
+
+p { margin-bottom: 10px; }
+
+strong { color: var(--primary); }
+
+a { color: var(--primary); }
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+footer {
+    margin-top: 20px;
+    padding: 22px;
+    font-size: 0.85rem;
+    text-align: center;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    background: #ffffff;
+}
+.footer-links a {
+    color: var(--primary);
+    text-decoration: none;
+    margin: 0 6px;
+    font-weight: 600;
+}
+.footer-links a:hover { text-decoration: underline; }
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="logo.png" alt="Lopes Facility & Support Services Logo" class="nav-logo">
+</header>
+
+<main class="main">
+    <h1>Impressum</h1>
+
+    <p><strong>Lopes Facility &amp; Support Services – A. Lopes</strong><br>
+    c/o ExpertFid &amp; Audit AG, Zweigniederlassung Basel<br>
+    Marktgasse 8<br>
+    4051 Basel, Schweiz</p>
+
+    <p><strong>Kontakt:</strong><br>
+    Telefon: +49&nbsp;170&nbsp;1523720<br>
+    E-Mail: <a href="mailto:info@lopes-facility.ch">info@lopes-facility.ch</a></p>
+
+    <p><strong>Art des Unternehmens:</strong><br>
+    Dienstleistungsunternehmen im Bereich Reinigung, Facility- &amp; Logistiksupport.</p>
+
+    <p><strong>Haftung für Inhalte:</strong><br>
+    Die Inhalte dieser Website wurden mit grösster Sorgfalt erstellt. Für die Richtigkeit,
+    Vollständigkeit und Aktualität der Inhalte wird keine Gewähr übernommen.</p>
+
+    <p><strong>Haftung für Links:</strong><br>
+    Für Inhalte externer Links übernehmen wir keine Haftung. Für den Inhalt der verlinkten
+    Seiten sind ausschliesslich deren Betreiber verantwortlich.</p>
+
+    <p><strong>Urheberrecht:</strong><br>
+    Texte, Layouts und Grafiken dieser Seite unterliegen dem Urheberrecht. Eine Verwendung
+    ausserhalb dieser Website bedarf der vorherigen Zustimmung.</p>
+
+    <a href="index.html" class="back-link">← Zurück zur Startseite</a>
+</main>
+
+<footer>
+    © 2025 Lopes Facility &amp; Support Services · Basel &amp; Umgebung
+    <div class="footer-links">
+        <a href="impressum.html">Impressum</a> ·
+        <a href="datenschutz.html">Datenschutz</a>
+    </div>
+</footer>
+
+</body>
+</html>
