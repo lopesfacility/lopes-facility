@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lopes Facility & Support Services</title>
-    <meta name="description" content="Lopes Facility & Support Services – Reinigung, Unterhalt und Facility Services für Büros, Container und Baustellen im Raum Basel.">
+    <meta name="description" content="Lopes Facility & Support Services – Reinigung, Support- und Logistikdienstleistungen für Unternehmen, Baustellen und Immobilien in Basel und Umgebung.">
+
     <style>
         :root {
-            --bg: #0f172a;
-            --bg-light: #0b1220;
-            --accent: #22c55e;
-            --accent-soft: rgba(34, 197, 94, 0.1);
-            --text: #e5e7eb;
-            --muted: #9ca3af;
-            --card: #020617;
-            --border: #1f2937;
+            --primary: #25134d;      /* dunkel-violett */
+            --primary-soft: #f4f0ff;
+            --accent1: #ff6a3d;      /* orange Verlauf */
+            --accent2: #9b4baf;      /* violett Verlauf */
+            --accent3: #4055d4;      /* blau Verlauf */
+            --bg: #f7f6fb;
+            --text: #1c1630;
+            --muted: #6b7280;
+            --border: #e0e2f0;
+            --card-bg: #ffffff;
         }
 
         * {
@@ -24,7 +27,7 @@
         body {
             margin: 0;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: radial-gradient(circle at top, #1f2937 0, #020617 45%, #020617 100%);
+            background-color: var(--bg);
             color: var(--text);
         }
 
@@ -33,205 +36,298 @@
             text-decoration: none;
         }
 
+        /* NAVIGATION */
+
         header {
-            border-bottom: 1px solid var(--border);
-            backdrop-filter: blur(10px);
-            background: linear-gradient(to right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.9));
             position: sticky;
             top: 0;
-            z-index: 10;
+            z-index: 20;
+            background-color: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
         }
 
-        .nav-inner {
-            max-width: 1100px;
+        .nav {
+            max-width: 1120px;
             margin: 0 auto;
-            padding: 12px 20px;
+            padding: 8px 16px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 12px;
         }
 
-        .logo-text {
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-logo {
+            height: 44px;
+        }
+
+        .nav-title {
+            font-size: 15px;
             font-weight: 600;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            font-size: 14px;
+            letter-spacing: 0.03em;
+            color: var(--primary);
         }
 
-        .logo-highlight {
-            color: var(--accent);
+        .nav-sub {
+            font-size: 11px;
+            color: var(--muted);
         }
 
         .nav-right {
             display: flex;
-            gap: 16px;
+            align-items: center;
+            gap: 18px;
             font-size: 14px;
+        }
+
+        .nav-link {
             color: var(--muted);
+            font-weight: 500;
         }
 
-        .nav-right span {
-            cursor: default;
+        .nav-link:hover {
+            color: var(--primary);
         }
 
-        .badge {
-            border-radius: 999px;
-            border: 1px solid rgba(148, 163, 184, 0.4);
-            padding: 3px 10px;
+        .nav-badge {
             font-size: 11px;
             text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background-color: var(--primary-soft);
+            color: var(--primary);
             letter-spacing: 0.08em;
         }
 
-        main {
-            max-width: 1100px;
+        .nav-toggle {
+            display: none;
+            border: 1px solid var(--border);
+            background: #fff;
+            border-radius: 999px;
+            padding: 5px 9px;
+            cursor: pointer;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 16px;
+            height: 2px;
+            background: var(--primary);
+            margin: 3px 0;
+        }
+
+        .nav-mobile {
+            display: none;
+            border-top: 1px solid var(--border);
+            background: #ffffff;
+        }
+
+        .nav-mobile-inner {
+            max-width: 1120px;
             margin: 0 auto;
-            padding: 24px 20px 60px;
+            padding: 8px 16px 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-size: 14px;
+        }
+
+        .nav-mobile a {
+            color: var(--muted);
+        }
+
+        .nav-mobile a:hover {
+            color: var(--primary);
+        }
+
+        /* LAYOUT */
+
+        main {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 24px 16px 60px;
         }
 
         .hero {
+            margin-top: 8px;
             display: grid;
-            grid-template-columns: minmax(0, 3fr) minmax(0, 2.7fr);
-            gap: 32px;
+            grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+            gap: 26px;
             align-items: center;
-            margin-top: 16px;
-            margin-bottom: 40px;
+        }
+
+        .hero-kicker {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--muted);
+            margin-bottom: 8px;
         }
 
         .hero-title {
-            font-size: clamp(30px, 4vw, 40px);
-            font-weight: 650;
-            line-height: 1.1;
-            letter-spacing: 0.01em;
-            margin-bottom: 16px;
+            font-size: clamp(26px, 3.8vw, 34px);
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--primary);
+            margin-bottom: 12px;
         }
 
         .hero-title span {
-            color: var(--accent);
+            background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
+            -webkit-background-clip: text;
+            color: transparent;
         }
 
-        .hero-sub {
+        .hero-text {
+            font-size: 14px;
             color: var(--muted);
-            font-size: 15px;
-            line-height: 1.6;
-            margin-bottom: 22px;
+            line-height: 1.7;
+            margin-bottom: 18px;
         }
 
         .hero-actions {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 10px;
             align-items: center;
         }
 
         .btn-primary {
-            background: var(--accent);
-            color: #022c22;
             border-radius: 999px;
-            padding: 9px 20px;
-            font-size: 14px;
-            font-weight: 600;
+            padding: 10px 18px;
             border: none;
             cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            background: linear-gradient(90deg, var(--accent1), var(--accent2));
+            box-shadow: 0 12px 28px rgba(37, 19, 77, 0.28);
         }
 
         .btn-primary:hover {
             opacity: 0.95;
         }
 
-        .btn-ghost {
+        .btn-outline {
             border-radius: 999px;
-            padding: 9px 18px;
+            padding: 9px 16px;
             font-size: 13px;
-            color: var(--muted);
             border: 1px solid var(--border);
-            background: rgba(15, 23, 42, 0.9);
+            background-color: #ffffff;
+            color: var(--primary);
+            cursor: pointer;
         }
 
         .hero-note {
-            margin-top: 10px;
             font-size: 12px;
             color: var(--muted);
+            margin-top: 8px;
         }
 
         .hero-card {
-            background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.2), #020617 55%);
-            border-radius: 18px;
-            padding: 18px 18px 16px;
-            border: 1px solid rgba(148, 163, 184, 0.25);
-            box-shadow: 0 20px 45px rgba(15, 23, 42, 0.8);
+            background: radial-gradient(circle at top left, rgba(255,106,61,0.18), rgba(64,85,212,0.06)), #ffffff;
+            border-radius: 16px;
+            padding: 18px 18px 14px;
+            border: 1px solid var(--border);
+            box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
         }
 
         .hero-card-title {
-            font-size: 14px;
+            font-size: 12px;
             text-transform: uppercase;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.18em;
             color: var(--muted);
             margin-bottom: 8px;
         }
 
         .hero-card-main {
-            font-size: 15px;
+            font-size: 13px;
+            color: var(--text);
+            line-height: 1.7;
             margin-bottom: 10px;
         }
 
-        .hero-taglist {
+        .tag-row {
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .tag {
-            border-radius: 999px;
-            padding: 3px 10px;
-            background: rgba(15, 23, 42, 0.8);
-            border: 1px solid rgba(148, 163, 184, 0.35);
             font-size: 11px;
+            padding: 3px 9px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.7);
+            background-color: #ffffff;
             color: var(--muted);
         }
 
-        .hero-meta {
+        .hero-card-meta {
             font-size: 11px;
             color: var(--muted);
             display: flex;
             justify-content: space-between;
+            gap: 8px;
         }
 
-        .grid {
-            display: grid;
-            gap: 20px;
-            margin-bottom: 32px;
+        .section {
+            margin-top: 40px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 650;
+            margin-bottom: 6px;
+            color: var(--primary);
+        }
+
+        .section-sub {
+            font-size: 14px;
+            color: var(--muted);
+            margin-bottom: 16px;
+            line-height: 1.6;
         }
 
         .grid-2 {
+            display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
         }
 
         .card {
-            background: rgba(15, 23, 42, 0.95);
-            border-radius: 16px;
-            padding: 18px 18px 16px;
-            border: 1px solid rgba(31, 41, 55, 0.9);
+            background: var(--card-bg);
+            border-radius: 14px;
+            padding: 16px 18px 14px;
+            border: 1px solid var(--border);
         }
 
-        .card h2 {
-            font-size: 16px;
-            margin: 0 0 10px;
+        .card h3 {
+            margin: 0 0 8px;
+            font-size: 15px;
+            color: var(--primary);
         }
 
         .card p {
             margin: 0 0 8px;
             font-size: 14px;
             color: var(--muted);
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         ul {
             margin: 0;
             padding-left: 18px;
-            color: var(--muted);
             font-size: 14px;
-            line-height: 1.6;
+            color: var(--muted);
+            line-height: 1.7;
         }
 
         .pill-row {
@@ -242,50 +338,135 @@
         }
 
         .pill {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--muted);
             padding: 4px 9px;
             border-radius: 999px;
-            background: rgba(15, 23, 42, 1);
-            border: 1px solid rgba(55, 65, 81, 0.9);
+            background-color: #f3f4ff;
+            border: 1px solid #e0e3ff;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .why-box {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 14px 14px 12px;
+            border: 1px solid var(--border);
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .why-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .impressions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .impression {
+            border-radius: 12px;
+            padding: 10px;
+            min-height: 110px;
+            background: linear-gradient(135deg, rgba(255,106,61,0.2), rgba(64,85,212,0.2));
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .impression-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #ffffff;
+            text-shadow: 0 10px 20px rgba(15, 23, 42, 0.7);
+        }
+
+        .impression-note {
+            font-size: 11px;
+            color: #f9fafb;
+            opacity: 0.9;
         }
 
         .contact-grid {
             display: grid;
             grid-template-columns: minmax(0, 1.7fr) minmax(0, 2fr);
-            gap: 18px;
+            gap: 16px;
         }
 
         .contact-line {
             font-size: 14px;
             color: var(--muted);
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .contact-label {
-            font-size: 12px;
+            font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.15em;
             color: var(--muted);
+            margin-top: 4px;
         }
 
         .contact-value {
-            font-size: 15px;
-            margin-bottom: 8px;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .opening-hours {
+            margin-top: 8px;
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .opening-hours div {
+            margin-bottom: 2px;
+        }
+
+        .opening-hours span {
+            display: inline-block;
+            min-width: 120px;
+        }
+
+        .legal-text {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.6;
         }
 
         footer {
+            border-top: 1px solid var(--border);
+            padding: 16px 10px 22px;
             text-align: center;
-            padding: 18px 12px 26px;
             font-size: 12px;
             color: var(--muted);
-            border-top: 1px solid var(--border);
-            background: rgba(15, 23, 42, 0.95);
+            background: #ffffff;
         }
 
-        @media (max-width: 800px) {
+        /* RESPONSIVE */
+
+        @media (max-width: 880px) {
             .hero {
                 grid-template-columns: minmax(0, 1fr);
+                margin-top: 18px;
+            }
+            .grid-2 {
+                grid-template-columns: minmax(0, 1fr);
+            }
+            .why-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+            .impressions-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
             .contact-grid {
                 grid-template-columns: minmax(0, 1fr);
@@ -293,8 +474,17 @@
             .nav-right {
                 display: none;
             }
+            .nav-toggle {
+                display: block;
+            }
             main {
                 padding-top: 18px;
+            }
+        }
+
+        @media (max-width: 580px) {
+            .impressions-grid {
+                grid-template-columns: minmax(0, 1fr);
             }
         }
     </style>
@@ -302,122 +492,240 @@
 <body>
 
 <header>
-    <div class="nav-inner">
-        <div class="logo-text">
-            <span class="logo-highlight">Lopes</span> Facility &amp; Support
+    <div class="nav">
+        <div class="nav-left">
+            <img src="Logo Transparent - Lopes Facility & Support Services.png"
+                 alt="Lopes Facility &amp; Support Services Logo"
+                 class="nav-logo">
+            <div>
+                <div class="nav-title">Lopes Facility &amp; Support Services</div>
+                <div class="nav-sub">Reinigung · Facility- &amp; Logistiksupport · Region Basel</div>
+            </div>
         </div>
+
         <div class="nav-right">
-            <span class="badge">Region Basel</span>
-            <span>Reinigung &amp; Facility Services</span>
+            <a href="#leistungen" class="nav-link">Leistungen</a>
+            <a href="#ueber-uns" class="nav-link">Über uns</a>
+            <a href="#kontakt" class="nav-link">Kontakt</a>
+            <div class="nav-badge">Basel &amp; Umgebung</div>
+        </div>
+
+        <button class="nav-toggle" onclick="toggleNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
+    <div class="nav-mobile" id="nav-mobile">
+        <div class="nav-mobile-inner">
+            <a href="#leistungen" onclick="toggleNav()">Leistungen</a>
+            <a href="#ueber-uns" onclick="toggleNav()">Über uns</a>
+            <a href="#kontakt" onclick="toggleNav()">Kontakt</a>
         </div>
     </div>
 </header>
 
 <main>
+    <!-- HERO -->
     <section class="hero">
         <div>
-            <div class="badge">Dienstleister für Unternehmen &amp; Baustellen</div>
+            <div class="hero-kicker">Dienstleistungen für Unternehmen, Baustellen &amp; Immobilien</div>
             <h1 class="hero-title">
-                Saubere Container, Büros und Anlagen.
-                <span>Verlässlich. Planbar.</span>
+                Saubere Infrastruktur, klare Abläufe.
+                <span>Für einen reibungslosen Betrieb.</span>
             </h1>
-            <p class="hero-sub">
-                Lopes Facility &amp; Support Services sorgt für klare Strukturen auf und neben der Baustelle:
-                von der regelmässigen Reinigung von Büro- und Sanitärcontainern bis zur Unterhaltsreinigung
-                in bestehenden Gebäuden. Direkt, unkompliziert, ohne lange Wege.
+            <p class="hero-text">
+                Lopes Facility &amp; Support Services bietet professionelle Reinigungs-, Support- und
+                Logistikdienstleistungen für Unternehmen, Baustellen und Immobilien in Basel und Umgebung.
+                Der Fokus liegt auf verlässlichen, planbaren Einsätzen mit klar definierten Abläufen.
             </p>
             <div class="hero-actions">
-                <a href="#kontakt">
-                    <button class="btn-primary">Kontakt &amp; Offertanfrage</button>
+                <a href="mailto:info@lopes-facility.ch?subject=Offertanfrage%20Lopes%20Facility%20&amp;body=Guten%20Tag,%0D%0A%0D%0Aich%20benötige%20eine%20Offerte%20für%20folgende%20Dienstleistung:%0D%0A">
+                    <button class="btn-primary">Offerte anfragen</button>
                 </a>
-                <a href="#leistungen">
-                    <button class="btn-ghost">Leistungen im Überblick</button>
+                <a href="tel:+491701523720">
+                    <button class="btn-outline">Direkt anrufen: +49&nbsp;170&nbsp;1523720</button>
                 </a>
             </div>
             <div class="hero-note">
-                Kurzfristige Einsätze auf Anfrage möglich. Fokus auf Raum Basel und Umgebung.
+                Einsätze hauptsächlich im Raum Basel und Umgebung – weitere Standorte nach Absprache.
             </div>
         </div>
 
         <aside class="hero-card">
             <div class="hero-card-title">Schwerpunkte</div>
             <div class="hero-card-main">
-                Saubere Infrastruktur für reibungslose Abläufe – speziell auf Baustellen und in
-                temporären Anlagen, wo klassische Reinigungsfirmen oft nicht flexibel genug sind.
+                Unterstützung dort, wo eine saubere und funktionierende Infrastruktur die Basis für den
+                laufenden Betrieb ist – insbesondere bei temporären Anlagen, Baustellen und kleineren
+                Geschäftseinheiten.
             </div>
-            <div class="hero-taglist">
-                <span class="tag">Baustellen-Container</span>
-                <span class="tag">Büros &amp; Sozialräume</span>
-                <span class="tag">Sanitärcontainer</span>
+            <div class="tag-row">
                 <span class="tag">Unterhaltsreinigung</span>
+                <span class="tag">Sanitär- &amp; Bürocontainer</span>
+                <span class="tag">Baureinigung</span>
+                <span class="tag">Objekt- &amp; Betriebssupport</span>
+                <span class="tag">Logistikunterstützung</span>
             </div>
-            <div class="hero-meta">
-                <span>Basel &amp; Umgebung</span>
-                <span>Planbare Reinigungsintervalle</span>
+            <div class="hero-card-meta">
+                <span>Planbare Intervalle</span>
+                <span>Projektbezogene Einsätze</span>
             </div>
         </aside>
     </section>
 
-    <section id="leistungen" class="grid grid-2">
-        <div class="card">
-            <h2>Leistungen</h2>
-            <p>Wir unterstützen Firmenkunden mit klar definierten, wiederkehrenden Services:</p>
-            <ul>
-                <li>Reinigung von Büro-, Sanitär- und Mannschaftscontainern</li>
-                <li>Regelmässige Unterhaltsreinigung von Büros und Aufenthaltsräumen</li>
-                <li>Zwischenreinigung bei laufenden Bauprojekten</li>
-                <li>Endreinigung von Containern oder Flächen nach Projektabschluss</li>
-                <li>Einfache Facility Services nach Absprache</li>
-            </ul>
-            <div class="pill-row">
-                <span class="pill">Fixe Intervalle (z. B. 2× pro Woche)</span>
-                <span class="pill">Individuelle Lösungen für Ihr Projekt</span>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2>Warum mit uns arbeiten?</h2>
-            <p>
-                Wir kennen die Abläufe auf Baustellen und in laufenden Projekten. Anfahrtszeiten,
-                Zutritte und Arbeitsfenster werden frühzeitig abgestimmt, damit der Betrieb nicht gestört wird.
-            </p>
-            <ul>
-                <li>Klare Zuständigkeiten und direkte Kommunikation</li>
-                <li>Flexible Anpassung bei Projektphasen oder Mehrbedarf</li>
-                <li>Transparente, einfache Offerten ohne versteckte Positionen</li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="card" style="margin-bottom: 32px;">
-        <h2>Einsatzgebiet</h2>
-        <p>
-            Unser Schwerpunkt liegt in Basel und der näheren Umgebung. Einsätze auf Baustellen, in
-            Firmengebäuden oder temporären Anlagen sind nach Absprache möglich.
+    <!-- LEISTUNGEN -->
+    <section id="leistungen" class="section">
+        <h2 class="section-title">Leistungen</h2>
+        <p class="section-sub">
+            Lopes Facility &amp; Support Services kombiniert Reinigungsleistungen mit praktischer
+            Unterstützung im täglichen Betrieb. Typische Aufgabenbereiche:
         </p>
-        <div class="pill-row">
-            <span class="pill">Basel-Stadt &amp; Basel-Land</span>
-            <span class="pill">Region Pratteln / Muttenz</span>
-            <span class="pill">Weitere Orte auf Anfrage</span>
+
+        <div class="grid-2">
+            <div class="card">
+                <h3>Reinigung &amp; Unterhalt</h3>
+                <ul>
+                    <li>Unterhaltsreinigung von Büros, Aufenthalts- und Sozialräumen</li>
+                    <li>Reinigung von Sanitär-, WC- und Bürocontainern</li>
+                    <li>Baustellenreinigung und Baureinigung während oder nach Projektphasen</li>
+                    <li>Endreinigung von Containern oder Flächen nach Projektabschluss</li>
+                </ul>
+                <div class="pill-row">
+                    <span class="pill">z. B. 1–2× pro Woche</span>
+                    <span class="pill">temporäre Einsätze möglich</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Support- &amp; Logistikleistungen</h3>
+                <ul>
+                    <li>Materialbereitstellung und einfache Transportaufgaben auf Baustellen</li>
+                    <li>Koordination vor Ort und Unterstützung im täglichen Projektbetrieb</li>
+                    <li>Objekt- und Betriebssupport nach Absprache</li>
+                    <li>Meldung von Mängeln und Unterstützung bei kleineren organisatorischen Themen</li>
+                </ul>
+                <div class="pill-row">
+                    <span class="pill">klare Absprachen</span>
+                    <span class="pill">direkte Kommunikation</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="kontakt" class="card">
-        <h2>Kontakt</h2>
-        <div class="contact-grid">
-            <div>
-                <p class="contact-line">
-                    Sie möchten eine Offerte oder haben Fragen zu einem konkreten Projekt?
-                    Melden Sie sich direkt – wir melden uns in der Regel am selben oder nächsten Werktag.
-                </p>
-                <p class="contact-line">
-                    Bitte geben Sie bei Anfragen möglichst schon an:
-                    <br>• Standort / Projekt
-                    <br>• Anzahl Container / Räume
-                    <br>• Gewünschte Reinigungsintervalle
-                </p>
+    <!-- WARUM WIR -->
+    <section class="section">
+        <h2 class="section-title">Warum Lopes Facility &amp; Support Services?</h2>
+        <p class="section-sub">
+            Der Fokus liegt nicht auf komplexen Strukturen, sondern auf sauber ausgeführten Aufgaben
+            und nachvollziehbaren Abläufen.
+        </p>
+
+        <div class="why-grid">
+            <div class="why-box">
+                <div class="why-title">Praxisnahe Erfahrung</div>
+                Einsätze werden so geplant, dass bestehende Abläufe und Sicherheitsvorgaben berücksichtigt
+                werden – insbesondere auf Baustellen und in laufenden Projekten.
             </div>
-            <div>
+            <div class="why-box">
+                <div class="why-title">Klare Prozesse</div>
+                Durch definierte Intervalle, abgestimmte Zeitfenster und transparente Kommunikation bleibt
+                die Zusammenarbeit planbar und übersichtlich.
+            </div>
+            <div class="why-box">
+                <div class="why-title">Direkte Ansprechpartner</div>
+                Anfragen und Anpassungen werden direkt bearbeitet, ohne lange Entscheidungswege oder
+                unnötige Verwaltung.
+            </div>
+        </div>
+    </section>
+
+    <!-- ÜBER UNS -->
+    <section id="ueber-uns" class="section">
+        <h2 class="section-title">Über Lopes Facility &amp; Support Services</h2>
+        <p class="section-sub">
+            Das Unternehmen versteht sich als schlank aufgestellter Dienstleister mit Fokus auf
+            Zuverlässigkeit, Praxisnähe und klare Abläufe.
+        </p>
+
+        <div class="card">
+            <p>
+                Lopes Facility &amp; Support Services erbringt zuverlässige Reinigungs-, Support- und
+                Logistikleistungen für Unternehmen, Baustellen und Immobilien in Basel und Umgebung.
+                Im Fokus stehen planbare, flexible Einsätze mit klar definierten Abläufen.
+            </p>
+            <p>
+                Die Schwerpunkte liegen in der Unterhaltsreinigung, der Reinigung von Sanitär- und
+                Bürocontainern, der Baureinigung sowie im allgemeinen Objekt- und Betriebssupport.
+                Unterstützt wird insbesondere dort, wo eine saubere und funktionierende Infrastruktur
+                die Basis für einen reibungslosen Ablauf bildet.
+            </p>
+            <p>
+                Zusätzlich werden logistische Unterstützungsaufgaben übernommen, etwa Materialbereitstellung,
+                einfache Transportdienste auf Baustellen, Koordination vor Ort und organisatorische Tätigkeiten
+                im täglichen Projektbetrieb. So können sich Auftraggeber auf ihre jeweiligen Kernaufgaben
+                konzentrieren.
+            </p>
+            <p>
+                Durch klare Qualitätsstandards, transparente Prozesse und eine pragmatische, serviceorientierte
+                Arbeitsweise wird sichergestellt, dass alle vereinbarten Leistungen effizient, pünktlich und mit
+                möglichst geringer Beeinträchtigung des laufenden Betriebs ausgeführt werden.
+            </p>
+        </div>
+    </section>
+
+    <!-- IMPRESSIONEN / PLATZHALTER -->
+    <section class="section">
+        <h2 class="section-title">Impressionen &amp; Projekte (Platzhalter)</h2>
+        <p class="section-sub">
+            Hier können künftig Fotos von laufenden oder abgeschlossenen Projekten ergänzt werden,
+            beispielsweise Containeranlagen, Büroeinheiten oder Baustellen-Infrastruktur.
+        </p>
+
+        <div class="impressions-grid">
+            <div class="impression">
+                <div>
+                    <div class="impression-label">Baustellen-Container</div>
+                    <div class="impression-note">Regelmässige Reinigung von Büro-, Mannschafts- und Sanitärcontainern.</div>
+                </div>
+            </div>
+            <div class="impression">
+                <div>
+                    <div class="impression-label">Büro- &amp; Sozialräume</div>
+                    <div class="impression-note">Unterhaltsreinigung in kleineren Einheiten mit klaren Intervallen.</div>
+                </div>
+            </div>
+            <div class="impression">
+                <div>
+                    <div class="impression-label">Projektbezogene Einsätze</div>
+                    <div class="impression-note">Temporäre Unterstützung während intensiver Bau- oder Projektphasen.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="kontakt" class="section">
+        <h2 class="section-title">Kontakt &amp; Öffnungszeiten</h2>
+
+        <div class="contact-grid">
+            <div class="card">
+                <p class="contact-line">
+                    Für Offerten, Rückfragen oder konkrete Projektanfragen erreichen Sie Lopes Facility &amp;
+                    Support Services per E-Mail oder telefonisch. Bitte geben Sie nach Möglichkeit bereits
+                    Standort, Art des Objekts und den groben Leistungsumfang an.
+                </p>
+                <p class="contact-line">
+                    Anfragen werden in der Regel am selben oder nächsten Werktag beantwortet.
+                </p>
+                <div class="pill-row">
+                    <span class="pill">Projektbezogene Einsätze</span>
+                    <span class="pill">Regelmässige Intervalle</span>
+                    <span class="pill">Individuelle Lösungen</span>
+                </div>
+            </div>
+
+            <div class="card">
                 <div class="contact-label">E-Mail</div>
                 <div class="contact-value">
                     <a href="mailto:info@lopes-facility.ch">info@lopes-facility.ch</a>
@@ -425,22 +733,60 @@
 
                 <div class="contact-label">Telefon</div>
                 <div class="contact-value">
-                    +41&nbsp;XX&nbsp;XXX&nbsp;XX&nbsp;XX
+                    <a href="tel:+491701523720">+49&nbsp;170&nbsp;1523720</a>
                 </div>
 
-                <div class="contact-label">Firma</div>
+                <div class="contact-label">Adresse</div>
                 <div class="contact-value">
-                    Lopes Facility &amp; Support Services<br>
-                    Basel, Schweiz
+                    Lopes Facility &amp; Support Services, A. Lopes<br>
+                    c/o ExpertFid &amp; Audit AG, Zweigniederlassung Basel<br>
+                    Marktgasse 8<br>
+                    4051 Basel<br>
+                    Schweiz
+                </div>
+
+                <div class="contact-label">Öffnungszeiten</div>
+                <div class="opening-hours">
+                    <div><span>Montag&nbsp;–&nbsp;Freitag</span>08:00&nbsp;–&nbsp;18:00&nbsp;Uhr</div>
+                    <div><span>Samstag</span>09:00&nbsp;–&nbsp;15:00&nbsp;Uhr</div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- RECHTLICHES -->
+    <section class="section">
+        <h2 class="section-title">Rechtliches</h2>
+        <div class="card">
+            <p class="legal-text">
+                Verantwortlich für den Inhalt dieser Seite ist Lopes Facility &amp; Support Services, A. Lopes,
+                c/o ExpertFid &amp; Audit AG, Zweigniederlassung Basel, Marktgasse 8, 4051 Basel, Schweiz.
+            </p>
+            <p class="legal-text">
+                Diese Website dient der allgemeinen Information zu angebotenen Dienstleistungen und stellt
+                keine rechtsverbindliche Offerte dar. Alle Angaben ohne Gewähr. Bei Fragen zur
+                Datenverarbeitung im Rahmen von Kontaktanfragen wenden Sie sich bitte an
+                <a href="mailto:info@lopes-facility.ch">info@lopes-facility.ch</a>.
+            </p>
         </div>
     </section>
 </main>
 
 <footer>
-    © 2025 Lopes Facility &amp; Support Services &middot; Basel &amp; Umgebung
+    © 2025 Lopes Facility &amp; Support Services · Basel &amp; Umgebung
 </footer>
+
+<script>
+    function toggleNav() {
+        const mobile = document.getElementById('nav-mobile');
+        if (!mobile) return;
+        if (mobile.style.display === 'block') {
+            mobile.style.display = 'none';
+        } else {
+            mobile.style.display = 'block';
+        }
+    }
+</script>
 
 </body>
 </html>
