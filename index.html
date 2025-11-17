@@ -199,6 +199,12 @@
             align-items: center;
         }
 
+        .btn-primary,
+        .btn-outline {
+            display: inline-block;
+            text-align: center;
+        }
+
         .btn-primary {
             border-radius: 999px;
             padding: 10px 18px;
@@ -222,6 +228,10 @@
             border: 1px solid var(--border);
             background-color: #ffffff;
             color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: #f9fafb;
         }
 
         .hero-note {
@@ -493,8 +503,8 @@
 <header>
     <div class="nav">
         <div class="nav-left">
-            <!-- Logo-Datei im Repo als: logo-lopes-facility.png -->
-            <img src="logo-lopes-facility.png"
+            <!-- Logo-Datei im Repo als: logo.png -->
+            <img src="logo.png"
                  alt="Lopes Facility &amp; Support Services Logo"
                  class="nav-logo">
             <div>
@@ -541,11 +551,13 @@
                 Der Fokus liegt auf verlässlichen, planbaren Einsätzen mit klar definierten Abläufen.
             </p>
             <div class="hero-actions">
-                <a href="mailto:info@lopes-facility.ch?subject=Offertanfrage%20Lopes%20Facility%20&amp;body=Guten%20Tag,%0D%0A%0D%0Aich%20benötige%20eine%20Offerte%20für%20folgende%20Dienstleistung:%0D%0A">
-                    <button class="btn-primary">Offerte anfragen</button>
+                <a href="mailto:info@lopes-facility.ch?subject=Offertanfrage%20Lopes%20Facility%20&amp;body=Guten%20Tag,%0D%0A%0D%0Aich%20benötige%20eine%20Offerte%20für%20folgende%20Dienstleistung:%0D%0A" class="btn-primary">
+                    Offerte anfragen
                 </a>
-                <!-- Nur optische Hervorhebung, kein Klick -->
-                <span class="btn-outline">Direktkontakt: +49&nbsp;170&nbsp;1523720</span>
+                <!-- Handy-geeigneter Klick für Anruf -->
+                <a href="tel:+491701523720" class="btn-outline">
+                    Direkt anrufen: +49&nbsp;170&nbsp;1523720
+                </a>
             </div>
             <div class="hero-note">
                 Einsätze hauptsächlich im Raum Basel und Umgebung – weitere Standorte nach Absprache.
