@@ -82,7 +82,7 @@
             padding: 0.75rem 1.5rem;
             display: flex;
             align-items: center;
-            justify-content: center; /* Logo auch auf Desktop zentriert */
+            justify-content: center;
             gap: 1.5rem;
         }
 
@@ -256,7 +256,7 @@
             background: rgba(64, 170, 120, 0.07);
             color: #2b7a4b;
             border: 1px solid rgba(64, 170, 120, 0.24);
-            display: inline-flex;              /* Text im Chip zentrieren */
+            display: inline-flex;
             align-items: center;
             justify-content: center;
             text-align: center;
@@ -755,7 +755,7 @@
         /* MOBILE */
         @media (max-width: 719px) {
             .brand-image {
-                height: 32px;
+                height: 26px; /* noch etwas kleiner */
             }
 
             .container {
@@ -793,6 +793,27 @@
             .section-sub {
                 margin-left: auto;
                 margin-right: auto;
+            }
+
+            /* Warum-Section mobil zentrieren */
+            .why-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .why-badge {
+                align-self: center;
+            }
+
+            .why-footer {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .why-footer .btn {
+                align-self: center;
             }
 
             /* Footer auf Handy zentrieren */
@@ -936,7 +957,7 @@
 
                     <article class="focus-card">
                         <div class="focus-card-header">
-                            <div class="focus-icon">📂</div>
+                            <div the="focus-icon">📂</div>
                             <div class="focus-title">Projekt- &amp; Objektbetreuung</div>
                         </div>
                         <p class="focus-body">
@@ -1048,7 +1069,11 @@
                     </div>
                     <div class="why-footer">
                         <div>Geeignet für Unternehmen, Projekte, Immobilienverwaltungen und Baustellen mit realem Bedarf.</div>
-                        <div><a href="#kontakt" class="btn btn-outline" style="background:rgba(255,255,255,0.95);color:#271248;border-color:rgba(255,255,255,0.5);">Unverbindlichen Austausch anfragen</a></div>
+                        <div>
+                            <a href="#kontakt" class="btn btn-outline" style="background:rgba(255,255,255,0.95);color:#271248;border-color:rgba(255,255,255,0.5);">
+                                Unverbindlichen Austausch anfragen
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -1065,7 +1090,6 @@
                 </div>
 
                 <div class="insights-grid">
-                    <!-- 1 & 2: Sanitärreinigung -->
                     <article class="insight-card">
                         <div class="insight-image">
                             <img src="1.jpg" alt="Sanitärreinigung – Waschbecken- und WC-Bereich">
@@ -1086,7 +1110,6 @@
                         </div>
                     </article>
 
-                    <!-- 3 & 4: Baureinigung -->
                     <article class="insight-card">
                         <div class="insight-image">
                             <img src="3.jpg" alt="Baureinigung – Grobreinigung in Bauphasen">
@@ -1107,7 +1130,6 @@
                         </div>
                     </article>
 
-                    <!-- 5 & 6: Unterhaltsreinigung -->
                     <article class="insight-card">
                         <div class="insight-image">
                             <img src="5.jpg" alt="Unterhaltsreinigung – Arbeits- und Aufenthaltsbereiche">
