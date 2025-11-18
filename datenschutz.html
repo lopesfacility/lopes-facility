@@ -1,144 +1,355 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Datenschutzerklärung – Lopes Facility & Support Services</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutz – Lopes Facility &amp; Support Services</title>
+    <meta name="description" content="Datenschutzhinweise von Lopes Facility &amp; Support Services in Basel, Schweiz.">
+    <style>
+        :root {
+            --primary: #271248;
+            --primary-soft: #3b245f;
+            --bg:    #f6f3ff;
+            --text:  #211832;
+            --muted: #6a6b88;
+            --border: #e0ddf3;
+            --card: #ffffff;
+        }
 
-<style>
-:root {
-    --primary: #25134d;
-    --accent1: #ff6a3d;
-    --accent2: #9b4baf;
-    --accent3: #4055d4;
-    --bg: #f7f6fb;
-    --text: #1c1630;
-    --muted: #6b7280;
-    --border: #e0e2f0;
-    --card: #ffffff;
-}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    overflow-x: hidden;
-    opacity: 0;
-    animation: fadeIn 0.5s ease-out forwards;
-}
-@keyframes fadeIn { to { opacity: 1; } }
+        html, body {
+            height: 100%;
+        }
 
-header {
-    text-align: center;
-    padding: 22px 10px 10px 10px;
-    background: var(--card);
-    border-bottom: 1px solid var(--border);
-}
-.nav-logo {
-    width: 100%;
-    max-width: 260px;
-    height: auto;
-    margin: 0 auto;
-}
-@media (min-width: 900px) {
-    .nav-logo { max-width: 420px; }
-}
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background-color: #f6f3ff;
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
 
-.main {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 24px 16px 60px;
-}
+        img {
+            max-width: 100%;
+            display: block;
+        }
 
-h1 {
-    font-size: clamp(2rem, 3vw, 2.4rem);
-    font-weight: 800;
-    color: var(--primary);
-    margin-bottom: 18px;
-}
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-p { margin-bottom: 10px; }
-strong { color: var(--primary); }
-a { color: var(--primary); }
+        .page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
-.back-link {
-    display: inline-block;
-    margin-top: 20px;
-    text-decoration: none;
-    font-weight: 600;
-}
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1.5rem 1.5rem 3rem;
+        }
 
-/* Footer */
-footer {
-    margin-top: 20px;
-    padding: 22px;
-    font-size: 0.85rem;
-    text-align: center;
-    color: var(--muted);
-    border-top: 1px solid var(--border);
-    background: #ffffff;
-}
-.footer-links a {
-    color: var(--primary);
-    text-decoration: none;
-    margin: 0 6px;
-    font-weight: 600;
-}
-.footer-links a:hover { text-decoration: underline; }
-</style>
+        /* HEADER */
+        .site-header {
+            border-bottom: 1px solid rgba(224,221,243,0.8);
+            background: rgba(246,243,255,0.95);
+        }
+
+        .site-header-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .brand-image {
+            height: 32px;
+            width: auto;
+        }
+
+        /* CARD / CONTENT */
+        .ds-card {
+            margin-top: 2rem;
+            border-radius: 1.2rem;
+            padding: 1.5rem 1.4rem 1.6rem;
+            background: var(--card);
+            border: 1px solid rgba(220,216,246,0.95);
+            box-shadow:
+                0 10px 24px rgba(24, 7, 63, 0.10),
+                0 0 0 1px rgba(255,255,255,0.9);
+        }
+
+        .ds-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--primary-soft);
+            margin-bottom: 0.75rem;
+        }
+
+        .ds-section {
+            margin-top: 1.2rem;
+        }
+
+        .ds-section h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary-soft);
+            margin-bottom: 0.25rem;
+        }
+
+        .ds-section p,
+        .ds-section ul {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .ds-block {
+            font-size: 0.9rem;
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .ds-block strong {
+            font-weight: 600;
+            color: var(--primary-soft);
+        }
+
+        .ds-section ul {
+            margin-top: 0.25rem;
+            padding-left: 1.1rem;
+            list-style: disc;
+        }
+
+        .ds-section ul li {
+            margin-bottom: 0.15rem;
+        }
+
+        .back-link {
+            margin-top: 1.8rem;
+            font-size: 0.9rem;
+        }
+
+        .back-link a {
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            text-decoration-thickness: 1px;
+        }
+
+        /* FOOTER */
+        .site-footer {
+            border-top: 1px solid rgba(210,205,245,0.9);
+            margin-top: auto;
+        }
+
+        .site-footer-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: space-between;
+            font-size: 0.78rem;
+            color: #8c89ac;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .footer-links a {
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            text-decoration-thickness: 1px;
+        }
+
+        @media (max-width: 719px) {
+            .container {
+                padding-inline: 1rem;
+            }
+
+            .ds-card {
+                padding-inline: 1.1rem;
+            }
+
+            .site-footer-inner {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+
+            .ds-title {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
-
 <body>
+<div class="page">
 
-<header>
-    <img src="logo.png" alt="Lopes Facility & Support Services Logo" class="nav-logo">
-</header>
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="site-header-inner">
+            <img src="logo.png" alt="Lopes Facility &amp; Support Services Logo" class="brand-image">
+        </div>
+    </header>
 
-<main class="main">
-    <h1>Datenschutzerklärung</h1>
+    <!-- MAIN -->
+    <main>
+        <div class="container">
+            <section class="ds-card">
+                <h1 class="ds-title">Datenschutz</h1>
 
-    <p><strong>Verantwortliche Stelle:</strong><br>
-    Lopes Facility &amp; Support Services, A. Lopes<br>
-    E-Mail: <a href="mailto:info@lopes-facility.ch">info@lopes-facility.ch</a></p>
+                <div class="ds-section">
+                    <h2>1. Einleitung</h2>
+                    <p>
+                        Der Schutz personenbezogener Daten ist uns wichtig. In diesen Hinweisen wird erlaeutert,
+                        welche Daten wir im Zusammenhang mit dieser Website bearbeiten, zu welchen Zwecken dies geschieht
+                        und welche Rechte betroffene Personen haben. Die Bearbeitung erfolgt im Rahmen des
+                        geltenden schweizerischen Datenschutzrechts.
+                    </p>
+                </div>
 
-    <p><strong>Server-Logfiles:</strong><br>
-    Beim Aufruf dieser Website werden durch den Hosting-Provider automatisch technische Informationen
-    in sogenannten Logfiles gespeichert (z.&nbsp;B. Browsertyp, Betriebssystem, Uhrzeit des Abrufs,
-    gekürzte IP-Adresse). Diese Daten sind für die Bereitstellung und Sicherheit der Seite technisch
-    erforderlich und werden nicht zu Marketingzwecken ausgewertet.</p>
+                <div class="ds-section">
+                    <h2>2. Verantwortliche Stelle</h2>
+                    <div class="ds-block">
+                        <strong>Verantwortlich für die Datenbearbeitung</strong><br>
+                        Lopes Facility &amp; Support Services<br>
+                        Inhaberin: Ana Rita Simoes Lopes<br>
+                        c/o ExpertFid &amp; Audit AG<br>
+                        Marktgasse 8<br>
+                        4051 Basel<br>
+                        Schweiz
+                    </div>
+                </div>
 
-    <p><strong>Kontaktaufnahme:</strong><br>
-    Wenn Sie uns per E-Mail oder Telefon kontaktieren, werden die von Ihnen übermittelten Daten
-    ausschliesslich zur Bearbeitung der Anfrage und für eventuelle Rückfragen verwendet. Eine
-    Weitergabe an Dritte erfolgt nur, soweit dies zur Abwicklung erforderlich ist oder gesetzliche
-    Pflichten bestehen.</p>
+                <div class="ds-section">
+                    <h2>3. Kontakt</h2>
+                    <div class="ds-block">
+                        E-Mail: <a href="mailto:info@lopes-facility.ch">info@lopes-facility.ch</a><br>
+                        Telefon: +49&nbsp;170&nbsp;152&nbsp;372&nbsp;20
+                    </div>
+                </div>
 
-    <p><strong>Cookies & Tracking:</strong><br>
-    Diese Website verwendet derzeit keine Cookies zu Analyse- oder Marketingzwecken und setzt keine
-    externen Tracking-Dienste ein.</p>
+                <div class="ds-section">
+                    <h2>4. Welche Daten werden bearbeitet?</h2>
+                    <p>Je nach Nutzung der Website koennen insbesondere folgende Daten bearbeitet werden:</p>
+                    <ul>
+                        <li>Stammdaten (z.B. Name, Firma, Kontaktdaten)</li>
+                        <li>Angaben zu Einsatzort, gewuenschter Leistung und Intervallen</li>
+                        <li>Inhalt von Nachrichten, die über das Kontaktformular oder per E-Mail uebermittelt werden</li>
+                        <li>Technische Daten bei der Nutzung der Website (z.B. IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seiten)</li>
+                    </ul>
+                </div>
 
-    <p><strong>Speicherdauer:</strong><br>
-    Personenbezogene Daten werden nur so lange gespeichert, wie es für den jeweiligen Zweck (z.&nbsp;B.
-    Beantwortung einer Anfrage, Projektabwicklung, gesetzliche Aufbewahrungsfristen) erforderlich ist.</p>
+                <div class="ds-section">
+                    <h2>5. Zwecke der Datenbearbeitung</h2>
+                    <p>Die Daten werden insbesondere zu folgenden Zwecken bearbeitet:</p>
+                    <ul>
+                        <li>Beantwortung von Anfragen und Kontaktaufnahmen</li>
+                        <li>Erstellung von Offerten und Vorbereitung von Vertragsabschluessen</li>
+                        <li>Planung und Erbringung von Reinigungs- und Supportleistungen</li>
+                        <li>Sicherstellung des technisch stabilen Betriebs der Website (z.B. Fehleranalyse, Sicherheit)</li>
+                    </ul>
+                </div>
 
-    <p><strong>Ihre Rechte:</strong><br>
-    Im Rahmen der geltenden gesetzlichen Bestimmungen haben Sie das Recht auf Auskunft über die zu Ihrer
-    Person gespeicherten Daten, auf Berichtigung oder Löschung sowie ggf. auf Einschränkung der Verarbeitung.
-    Entsprechende Anfragen können an die oben genannte Kontaktadresse gerichtet werden.</p>
+                <div class="ds-section">
+                    <h2>6. Kontaktformular und E-Mail</h2>
+                    <p>
+                        Wenn Sie das Kontaktformular nutzen oder uns direkt per E-Mail kontaktieren, werden die von Ihnen
+                        gemachten Angaben zur Bearbeitung der Anfrage und fuer moegliche Anschlussfragen verwendet.
+                        Die Bearbeitung erfolgt nur soweit dies für die Kommunikation und die Bearbeitung der Anfrage erforderlich ist.
+                    </p>
+                </div>
 
-    <a href="index.html" class="back-link">← Zurück zur Startseite</a>
-</main>
+                <div class="ds-section">
+                    <h2>7. Server-Logdaten</h2>
+                    <p>
+                        Beim Aufruf dieser Website koennen technische Daten automatisch in Server-Logfiles gespeichert werden
+                        (z.B. IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, verwendeter Browser).
+                        Diese Daten dienen der Sicherstellung des Betriebs und der Sicherheit der Website und werden nicht
+                        dazu verwendet, Nutzerinnen und Nutzer persoenlich zu identifizieren.
+                    </p>
+                </div>
 
-<footer>
-    © 2025 Lopes Facility &amp; Support Services · Basel &amp; Umgebung
-    <div class="footer-links">
-        <a href="impressum.html">Impressum</a> ·
-        <a href="datenschutz.html">Datenschutz</a>
-    </div>
-</footer>
+                <div class="ds-section">
+                    <h2>8. Weitergabe von Daten</h2>
+                    <p>
+                        Eine Weitergabe personenbezogener Daten erfolgt grundsaetzlich nur, wenn dies für die
+                        Erbringung der Leistungen erforderlich ist (z.B. Zusammenarbeit mit externen Dienstleistern)
+                        oder wenn eine gesetzliche Pflicht besteht. Mit Dienstleistern, die personenbezogene Daten
+                        im Auftrag bearbeiten, werden – wo erforderlich – entsprechende Vereinbarungen zur Auftragsbearbeitung abgeschlossen.
+                    </p>
+                </div>
 
+                <div class="ds-section">
+                    <h2>9. Speicherdauer</h2>
+                    <p>
+                        Personenbezogene Daten werden nur so lange aufbewahrt, wie dies für die genannten Zwecke erforderlich ist
+                        oder eine gesetzliche Aufbewahrungspflicht besteht. Danach werden die Daten geloescht oder anonymisiert.
+                    </p>
+                </div>
+
+                <div class="ds-section">
+                    <h2>10. Rechte betroffener Personen</h2>
+                    <p>
+                        Personen, deren Daten bearbeitet werden, haben im Rahmen des geltenden Datenschutzrechts insbesondere das Recht:
+                    </p>
+                    <ul>
+                        <li>Auskunft darueber zu verlangen, ob und welche personenbezogenen Daten bearbeitet werden</li>
+                        <li>die Berichtigung unrichtiger Daten zu verlangen</li>
+                        <li>die Loeschung von Daten zu verlangen, soweit dem keine gesetzlichen Pflichten entgegenstehen</li>
+                        <li>unter bestimmten Voraussetzungen der Datenbearbeitung zu widersprechen</li>
+                    </ul>
+                    <p>
+                        Fuer entsprechende Anliegen kann die unter Kontakt genannte Adresse verwendet werden.
+                        Zur Bearbeitung solcher Anfragen kann ein Identitaetsnachweis erforderlich sein.
+                    </p>
+                </div>
+
+                <div class="ds-section">
+                    <h2>11. Anpassungen dieser Datenschutzhinweise</h2>
+                    <p>
+                        Diese Datenschutzhinweise koennen bei Bedarf angepasst werden, zum Beispiel bei Aenderungen der
+                        gesetzlichen Grundlagen oder der Datenbearbeitung. Es gilt jeweils die auf dieser Website
+                        veroeffentlichte Version.
+                    </p>
+                </div>
+
+                <div class="back-link">
+                    <a href="index.html">&larr; Zurueck zur Startseite</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div>© 2025 Lopes Facility &amp; Support Services, Basel</div>
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+
+</div>
 </body>
 </html>
