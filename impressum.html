@@ -75,4 +75,175 @@
             border-radius: 1.2rem;
             padding: 1.5rem 1.4rem 1.6rem;
             background: var(--card);
-            border: 1px solid rgba(220,2
+            border: 1px solid rgba(220,216,246,0.95);
+            box-shadow:
+                0 10px 24px rgba(24, 7, 63, 0.10),
+                0 0 0 1px rgba(255,255,255,0.9);
+        }
+
+        .imp-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--primary-soft);
+            margin-bottom: 0.75rem;
+        }
+
+        .imp-section {
+            margin-top: 1.2rem;
+        }
+
+        .imp-section h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary-soft);
+            margin-bottom: 0.25rem;
+        }
+
+        .imp-section p,
+        .imp-section div {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .back-link {
+            margin-top: 1.8rem;
+            font-size: 0.9rem;
+        }
+
+        .back-link a {
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            text-decoration-thickness: 1px;
+        }
+
+        /* FOOTER */
+        .site-footer {
+            border-top: 1px solid rgba(210,205,245,0.9);
+            margin-top: auto;
+        }
+
+        .site-footer-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: space-between;
+            font-size: 0.78rem;
+            color: #8c89ac;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .footer-links a {
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            text-decoration-thickness: 1px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 719px) {
+            .container {
+                padding-inline: 1rem;
+            }
+
+            .imp-card {
+                padding-inline: 1.1rem;
+            }
+
+            .imp-title {
+                text-align: center;
+            }
+
+            .site-footer-inner {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="page">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="site-header-inner">
+            <img src="logo.png" alt="Lopes Facility &amp; Support Services Logo" class="brand-image">
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+        <div class="container">
+            <section class="imp-card">
+                <h1 class="imp-title">Impressum</h1>
+
+                <div class="imp-section">
+                    <h2>Verantwortlich für den Inhalt</h2>
+                    <div>
+                        Lopes Facility &amp; Support Services<br>
+                        Inhaberin: Ana Rita Simoes Lopes<br>
+                        c/o ExpertFid &amp; Audit AG<br>
+                        Marktgasse 8<br>
+                        4051 Basel<br>
+                        Schweiz
+                    </div>
+                </div>
+
+                <div class="imp-section">
+                    <h2>Kontakt</h2>
+                    <div>
+                        E-Mail: <a href="mailto:info@lopes-facility.ch">info@lopes-facility.ch</a><br>
+                        Telefon: +49&nbsp;170&nbsp;152&nbsp;372&nbsp;20
+                    </div>
+                </div>
+
+                <div class="imp-section">
+                    <h2>Haftungsausschluss</h2>
+                    <p>
+                        Alle Angaben auf dieser Website wurden sorgfältig geprüft. Dennoch kann keine Gewähr für
+                        Richtigkeit, Vollständigkeit oder Aktualität übernommen werden. Die Nutzung der Inhalte
+                        erfolgt auf eigene Verantwortung.
+                    </p>
+                </div>
+
+                <div class="imp-section">
+                    <h2>Urheberrecht</h2>
+                    <p>
+                        Inhalte, Bilder und Dateien auf dieser Website sind urheberrechtlich geschützt.
+                        Eine Verwendung ohne ausdrückliche Zustimmung ist nicht gestattet.
+                    </p>
+                </div>
+
+                <div class="back-link">
+                    <a href="index.html">&larr; Zurück zur Startseite</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div>© 2025 Lopes Facility &amp; Support Services, Basel</div>
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+
+</div>
+</body>
+</html>
