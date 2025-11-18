@@ -35,13 +35,23 @@
             line-height: 1.6;
         }
 
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
         .page {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
 
-        /* HEADER */
+        /* HEADER – wie index */
         .site-header {
             border-bottom: 1px solid rgba(224,221,243,0.8);
             background: rgba(246,243,255,0.95);
@@ -54,6 +64,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
         }
 
         .brand-image {
@@ -157,7 +172,7 @@
             text-decoration-thickness: 1px;
         }
 
-        /* MOBILE */
+        /* MOBILE – Logo wie auf index kleiner */
         @media (max-width: 719px) {
             .container {
                 padding-inline: 1rem;
@@ -169,6 +184,10 @@
 
             .ds-title {
                 text-align: center;
+            }
+
+            .brand-image {
+                height: 24px;
             }
 
             .site-footer-inner {
@@ -190,7 +209,9 @@
     <!-- HEADER -->
     <header class="site-header">
         <div class="site-header-inner">
-            <img src="logo.png" alt="Lopes Facility &amp; Support Services Logo" class="brand-image">
+            <div class="brand">
+                <img src="logo.png" alt="Lopes Facility &amp; Support Services Logo" class="brand-image">
+            </div>
         </div>
     </header>
 
@@ -234,10 +255,10 @@
                     <h2>4. Welche Daten werden bearbeitet?</h2>
                     <p>Je nach Nutzung der Website können insbesondere folgende Daten bearbeitet werden:</p>
                     <ul>
-                        <li>Stammdaten (z. B. Name, Firma, Kontaktdaten)</li>
+                        <li>Stammdaten (z.&nbsp;B. Name, Firma, Kontaktdaten)</li>
                         <li>Angaben zu Einsatzort, gewünschter Leistung und Intervallen</li>
                         <li>Inhalt von Nachrichten, die über das Kontaktformular oder per E-Mail übermittelt werden</li>
-                        <li>Technische Daten beim Aufruf der Website (z. B. IP-Adresse, Datum, Uhrzeit, Seitenaufrufe, Browser)</li>
+                        <li>Technische Daten beim Aufruf der Website (z.&nbsp;B. IP-Adresse, Datum, Uhrzeit, Seitenaufrufe, Browser)</li>
                     </ul>
                 </div>
 
