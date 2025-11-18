@@ -287,7 +287,7 @@ main {
 ul { padding-left: 20px; }
 li + li { margin-top: 4px; }
 
-/* IMAGE GRID */
+/* ALTE IMAGE-GRID (nicht mehr verwendet, kann bleiben) */
 .image-grid {
     margin-top: 22px;
     display: grid;
@@ -304,9 +304,43 @@ li + li { margin-top: 4px; }
     background: #f1edff;
 }
 
+/* NEUE EINBLICKE-GRID */
+.insights-grid {
+    margin-top: 22px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 14px;
+}
+
+.insight-column h3 {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    color: var(--primary-soft);
+}
+
+.insight-images {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.insight-images img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 1px solid rgba(224,221,243,0.95);
+    box-shadow: 0 14px 30px rgba(24,17,60,0.12);
+    background: #f1edff;
+}
+
 @media (max-width: 720px) {
     .image-grid {
         grid-template-columns: repeat(2, minmax(0,1fr));
+    }
+
+    .insights-grid {
+        grid-template-columns: minmax(0,1fr);
     }
 }
 
@@ -497,17 +531,50 @@ footer {
         </div>
     </section>
 
-    <!-- EINBLICKE -->
+    <!-- EINBLICKE (NEU) -->
     <section class="section" aria-labelledby="einblicke">
         <div class="section-label">Einblicke</div>
         <h2 id="einblicke">Einblicke in unsere Arbeiten</h2>
-        <div class="image-grid">
-            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=900" alt="">
-            <img src="https://images.unsplash.com/photo-1581091215367-59ab6c8a9a80?q=80&w=900" alt="">
-            <img src="https://images.unsplash.com/photo-1596079890744-556ddec9a634?q=80&w=900" alt="">
-            <img src="https://images.unsplash.com/photo-1597004891231-dc9c9c3c1f6a?q=80&w=900" alt="">
-            <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?q=80&w=900" alt="">
-            <img src="https://images.unsplash.com/photo-1604014237800-1c9102c219da?q=80&w=900" alt="">
+
+        <div class="insights-grid">
+            <!-- Sanitär -->
+            <div class="insight-column">
+                <h3>Sanitär- &amp; Containerreinigung</h3>
+                <div class="insight-images">
+                    <figure>
+                        <img src="1.jpg" alt="Sanitärreinigung – Anlage 1">
+                    </figure>
+                    <figure>
+                        <img src="2.jpg" alt="Sanitärreinigung – Anlage 2">
+                    </figure>
+                </div>
+            </div>
+
+            <!-- Baureinigung -->
+            <div class="insight-column">
+                <h3>Baureinigung</h3>
+                <div class="insight-images">
+                    <figure>
+                        <img src="3.jpg" alt="Baureinigung – Baustelle Detail">
+                    </figure>
+                    <figure>
+                        <img src="4.jpg" alt="Baureinigung – Rohbau gereinigt">
+                    </figure>
+                </div>
+            </div>
+
+            <!-- Unterhaltsreinigung -->
+            <div class="insight-column">
+                <h3>Unterhaltsreinigung</h3>
+                <div class="insight-images">
+                    <figure>
+                        <img src="5.jpg" alt="Unterhaltsreinigung – Innenbereich 1">
+                    </figure>
+                    <figure>
+                        <img src="6.jpg" alt="Unterhaltsreinigung – Innenbereich 2">
+                    </figure>
+                </div>
+            </div>
         </div>
     </section>
 
