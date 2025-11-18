@@ -66,7 +66,7 @@
             padding: 1.5rem 1.5rem 4rem;
         }
 
-        /* HEADER / NAVIGATION */
+        /* HEADER */
         .site-header {
             position: sticky;
             top: 0;
@@ -82,7 +82,7 @@
             padding: 0.75rem 1.5rem;
             display: flex;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: center; /* Logo auch auf Desktop zentriert */
             gap: 1.5rem;
         }
 
@@ -91,7 +91,6 @@
             align-items: center;
         }
 
-        /* Logo im Header */
         .brand-image {
             height: 40px;
             width: auto;
@@ -142,7 +141,7 @@
             border-color: rgba(76, 64, 133, 0.5);
         }
 
-        /* HERO SECTION */
+        /* HERO */
         .hero {
             padding: 1.8rem 0 3rem;
         }
@@ -157,8 +156,6 @@
             flex-direction: column;
             gap: 1.25rem;
         }
-
-        /* hero-badge bleibt definiert, wird aber nicht mehr genutzt */
 
         .hero-title {
             font-size: 2rem;
@@ -259,6 +256,10 @@
             background: rgba(64, 170, 120, 0.07);
             color: #2b7a4b;
             border: 1px solid rgba(64, 170, 120, 0.24);
+            display: inline-flex;              /* Text im Chip zentrieren */
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
 
         .hero-side-body {
@@ -456,7 +457,7 @@
             flex-shrink: 0;
         }
 
-        /* EINBLICKE / BILDER */
+        /* EINBLICKE */
         .insights-grid {
             display: grid;
             gap: 1rem;
@@ -702,7 +703,7 @@
             text-decoration-thickness: 1px;
         }
 
-        /* RESPONSIVE DESKTOP */
+        /* DESKTOP */
         @media (min-width: 720px) {
             .container {
                 padding-top: 2.1rem;
@@ -751,12 +752,8 @@
             }
         }
 
-        /* RESPONSIVE MOBILE – Logo kleiner, alles zentriert */
+        /* MOBILE */
         @media (max-width: 719px) {
-            .site-header-inner {
-                justify-content: center;
-            }
-
             .brand-image {
                 height: 32px;
             }
@@ -797,6 +794,17 @@
                 margin-left: auto;
                 margin-right: auto;
             }
+
+            /* Footer auf Handy zentrieren */
+            .site-footer-inner {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -821,8 +829,6 @@
                 <div class="hero-grid">
 
                     <div class="hero-main">
-                        <!-- hero-badge entfernt -->
-
                         <h1 class="hero-title">
                             <span class="gradient-text">Saubere Räume. Klare Abläufe.</span>
                         </h1>
@@ -1047,7 +1053,7 @@
                 </div>
             </section>
 
-            <!-- EINBLICKE / BILDER -->
+            <!-- EINBLICKE -->
             <section id="einblicke">
                 <div class="section-header">
                     <div class="section-kicker">Einblicke</div>
@@ -1224,9 +1230,8 @@
     <!-- FOOTER -->
     <footer class="site-footer">
         <div class="site-footer-inner">
-            <div>© Lopes Facility &amp; Support Services, Basel</div>
+            <div>© 2025 Lopes Facility &amp; Support Services, Basel</div>
             <div class="footer-links">
-                <span>info@lopes-facility.ch</span>
                 <a href="impressum.html">Impressum</a>
                 <a href="datenschutz.html">Datenschutz</a>
             </div>
