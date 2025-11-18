@@ -139,16 +139,8 @@ main {
     line-height: 1.25;
     letter-spacing: -0.01em;
 }
-
-/* VERBESSERTER GRADIENT FÜR DIE ZWEITE ZEILE */
 .hero-title span {
-    background: linear-gradient(
-        90deg,
-        var(--accent-orange) 0%,
-        var(--accent-pink) 40%,
-        var(--accent-purple) 70%,
-        var(--accent-blue) 100%
-    );
+    background: linear-gradient(90deg, var(--accent-orange), var(--accent-pink), var(--accent-blue));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -295,7 +287,7 @@ main {
 ul { padding-left: 20px; }
 li + li { margin-top: 4px; }
 
-/* ALTE IMAGE-GRID (kann bleiben, wird aber für Einblicke nicht mehr genutzt) */
+/* Alte Image-Grid (nicht mehr genutzt, kann bleiben) */
 .image-grid {
     margin-top: 22px;
     display: grid;
@@ -312,7 +304,7 @@ li + li { margin-top: 4px; }
     background: #f1edff;
 }
 
-/* NEUE EINBLICKE-GRID MIT 3 SPALTEN UND JE 2 BILDERN UNTEREINANDER */
+/* NEUE EINBLICKE-GRID */
 .insights-grid {
     margin-top: 22px;
     display: grid;
@@ -441,22 +433,22 @@ footer {
                 </h1>
 
                 <p class="hero-subtext">
-                    Lopes Facility &amp; Support Services bietet professionelle Reinigungs-, Support- und
-                    Logistikdienstleistungen für Unternehmen, Baustellen und Immobilien in Basel und Umgebung.
-                    Der Fokus liegt auf verlässlichen, planbaren Einsätzen mit klar definierten Abläufen.
+                    Lopes Facility &amp; Support Services übernimmt Unterhalts-, Sanitär- und Baureinigung
+                    sowie einfachen Betriebssupport für Baustellen, Containeranlagen und kleinere Betriebe
+                    im Raum Basel. Planbar, verlässlich und ohne Experimente.
                 </p>
 
                 <div class="hero-buttons">
                     <a href="mailto:info@lopes-facility.ch?subject=Offertanfrage" class="btn btn-primary">
                         Offerte anfragen
                     </a>
-                    <a href="tel:+491701523720" class="btn btn-secondary">
-                        Direkt anrufen: +49 170 1523720
+                    <a href="#kontakt" class="btn btn-secondary">
+                        Verfügbarkeit prüfen
                     </a>
                 </div>
 
                 <p class="hero-note">
-                    Einsätze hauptsächlich im Raum Basel &amp; Umgebung – weitere Standorte nach Absprache.
+                    Einsätze hauptsächlich im Raum Basel &amp; Umgebung · Projektbezogene und laufende Einsätze möglich.
                 </p>
             </div>
 
@@ -489,27 +481,37 @@ footer {
         <div class="section-label">Leistungen</div>
         <h2 id="leistungen">Was wir für Ihren Betrieb übernehmen</h2>
         <p class="section-lead">
-            Lopes Facility &amp; Support Services kombiniert Reinigungsleistungen mit praktischer Unterstützung im
-            täglichen Betrieb. Typische Aufgabenbereiche:
+            Fokus auf saubere, funktionierende Infrastruktur – speziell für Baustellen, Containeranlagen
+            und kleinere Geschäftseinheiten im Raum Basel.
         </p>
 
         <div class="card">
-            <h3>Reinigung &amp; Unterhalt</h3>
+            <h3>Unterhaltsreinigung</h3>
             <ul>
-                <li>Reinigung von Büro-, Sozial- &amp; Sanitärcontainern</li>
-                <li>Unterhaltsreinigung in Büros &amp; Objekten</li>
-                <li>Baureinigung &amp; Übergaben nach Projektabschluss</li>
-                <li>Reinigung von Containerflächen</li>
+                <li>Laufende Reinigung von Büro- und Sozialräumen</li>
+                <li>Boden-, Sanitär- und Oberflächenreinigung</li>
+                <li>Reinigung von Eingangs- und Verkehrsflächen</li>
+                <li>Individuelle Intervalle (täglich, wöchentlich, projektbezogen)</li>
             </ul>
         </div>
 
         <div class="card">
-            <h3>Support- &amp; Logistikleistungen</h3>
+            <h3>Sanitär- &amp; Containerreinigung</h3>
             <ul>
-                <li>Materialbereitstellung &amp; einfache Transportaufgaben</li>
-                <li>Objekt- &amp; Betriebssupport</li>
-                <li>Unterstützung bei logistischen Abläufen</li>
-                <li>Temporäre Unterstützung während Projektphasen</li>
+                <li>Reinigung von Sanitär- und WC-Containern auf Baustellen</li>
+                <li>Büro- und Aufenthaltscontainer inkl. Küchenbereiche</li>
+                <li>Auffüllen von Verbrauchsmaterial nach Vereinbarung</li>
+                <li>Dokumentierte Einsätze für Bauleitung / Projektleitung</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Baureinigung &amp; Betriebssupport</h3>
+            <ul>
+                <li>Grobreinigung während der Bauphase</li>
+                <li>Feinreinigung vor Übergabe / Abnahme</li>
+                <li>Einfache Materialbereitstellung und kleinere Transportwege</li>
+                <li>Praktische Unterstützung für Betrieb &amp; Organisation vor Ort</li>
             </ul>
         </div>
     </section>
@@ -539,36 +541,36 @@ footer {
         </div>
     </section>
 
-    <!-- EINBLICKE – NEU MIT 1–6.JPG -->
+    <!-- EINBLICKE (neu mit deinen Bildern) -->
     <section class="section" aria-labelledby="einblicke">
         <div class="section-label">Einblicke</div>
         <h2 id="einblicke">Einblicke in unsere Arbeiten</h2>
 
         <div class="insights-grid">
-            <!-- Sanitär (1 & 2) -->
+            <!-- Sanitär -->
             <div class="insight-column">
                 <h3>Sanitär- &amp; WC-Container</h3>
                 <div class="insight-images">
-                    <img src="1.jpg" alt="Sanitärcontainer – Waschbecken und WC-Bereich">
-                    <img src="2.jpg" alt="Gereinigte Sanitäranlage im Container">
+                    <img src="1.jpg" alt="Reinigung von Sanitär- und WC-Containern">
+                    <img src="2.jpg" alt="Gereinigte Sanitäranlage im Einsatz">
                 </div>
             </div>
 
-            <!-- Baureinigung (3 & 4) -->
+            <!-- Baureinigung -->
             <div class="insight-column">
-                <h3>Baureinigung</h3>
+                <h3>Baureinigung auf der Baustelle</h3>
                 <div class="insight-images">
-                    <img src="3.jpg" alt="Baustellenbereich während der Baureinigung">
-                    <img src="4.jpg" alt="Gereinigter Rohbau mit freien Flächen">
+                    <img src="3.jpg" alt="Baureinigung im Rohbau, Bodenreinigung">
+                    <img src="4.jpg" alt="Gereinigte Rohbaufläche mit offenen Strukturen">
                 </div>
             </div>
 
-            <!-- Unterhaltsreinigung (5 & 6) -->
+            <!-- Unterhaltsreinigung -->
             <div class="insight-column">
-                <h3>Unterhaltsreinigung</h3>
+                <h3>Unterhaltsreinigung Innenbereiche</h3>
                 <div class="insight-images">
-                    <img src="5.jpg" alt="Unterhaltsreinigung – Innenraum mit gereinigtem Boden">
-                    <img src="6.jpg" alt="Glänzender Boden nach Unterhaltsreinigung">
+                    <img src="5.jpg" alt="Glänzender Boden in einem Innenraum">
+                    <img src="6.jpg" alt="Unterhaltsreinigung in einem Aufenthaltsbereich">
                 </div>
             </div>
         </div>
@@ -577,7 +579,12 @@ footer {
     <!-- KONTAKT -->
     <section class="contact-card" id="kontakt" aria-labelledby="kontakt-title">
         <div class="section-label">Kontakt</div>
-        <h2 id="kontakt-title">Kontakt &amp; Öffnungszeiten</h2>
+        <h2 id="kontakt-title">Kontakt &amp; Einsatzanfrage</h2>
+
+        <p>
+            Für Offerten, Projektanfragen oder eine kurze Einschätzung zum Aufwand
+            erreichen Sie uns direkt:
+        </p>
 
         <p><strong>E-Mail:</strong> <a href="mailto:info@lopes-facility.ch">info@lopes-facility.ch</a></p>
         <p><strong>Telefon:</strong> <a href="tel:+491701523720">+49 170 1523720</a></p>
@@ -588,9 +595,12 @@ footer {
             Marktgasse 8, 4051 Basel
         </p>
 
+        <p><strong>Typische Einsatzgebiete:</strong><br>
+            Basel, Basel-Land und Umgebung. Weitere Standorte nach Absprache.
+        </p>
+
         <p><strong>Öffnungszeiten:</strong><br>
-            Mo–Fr: 08:00–18:00<br>
-            Sa: 09:00–15:00
+            Mo–Fr: 08:00–18:00 · Sa: 09:00–15:00
         </p>
     </section>
 
