@@ -1,620 +1,1253 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Lopes Facility & Support Services</title>
-<meta name="description" content="Reinigungs-, Facility- & Logistiksupport für Unternehmen, Baustellen und Immobilien in der Region Basel. Professionell, zuverlässig und flexibel.">
+    <title>Lopes Facility & Support Services</title>
+    <meta name="description" content="Reinigung und Betriebssupport für Unternehmen und Projekte in Basel & Umgebung. Unterhaltsreinigung, Sanitär- & Hygienereinigung, Baureinigung sowie Objekt- und Betriebssupport. Planbar, verlässlich und ohne Experimente.">
 
-<style>
-:root {
-    --primary: #271248;         /* Logo-Schriftfarbe */
-    --primary-soft: #3b245f;
-    --accent-orange: #ff6a3d;
-    --accent-pink:   #f44f7c;
-    --accent-purple: #8b4adf;
-    --accent-blue:   #3058ff;
-    --bg:    #f6f3ff;
-    --bg-soft: #fdfbff;
-    --text:  #211832;
-    --muted: #6a6b88;
-    --border: #e0ddf3;
-    --card: #ffffff;
-}
+    <style>
+        :root {
+            --primary: #271248;
+            --primary-soft: #3b245f;
+            --accent-orange: #ff6a3d;
+            --accent-pink:   #f44f7c;
+            --accent-purple: #8b4adf;
+            --accent-blue:   #3058ff;
+            --bg:    #f6f3ff;
+            --bg-soft: #fdfbff;
+            --text:  #211832;
+            --muted: #6a6b88;
+            --border: #e0ddf3;
+            --card: #ffffff;
+        }
 
-/* RESET & BASE */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-html {
-    scroll-behavior: smooth;
-}
-body {
-    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-    background: radial-gradient(circle at top, #fdf4ff 0, #f6f3ff 42%, #f3f2ff 100%);
-    color: var(--text);
-    line-height: 1.6;
-    overflow-x: hidden;
-    opacity: 0;
-    animation: fadeInBody 0.6s ease-out forwards;
-}
+        /* RESET & BASE */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-@keyframes fadeInBody {
-    to { opacity: 1; }
-}
+        html, body {
+            height: 100%;
+        }
 
-/* HEADER / LOGO */
-header {
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    backdrop-filter: blur(14px);
-    background: linear-gradient(to bottom, rgba(246,243,255,0.96), rgba(246,243,255,0.88));
-    border-bottom: 1px solid rgba(224,221,243,0.7);
-}
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top left, #ffffff 0, #f6f3ff 45%, #ece6ff 100%);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
 
-.header-inner {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 10px 16px;
-    display: flex;
-    justify-content: center;
-}
+        img {
+            max-width: 100%;
+            display: block;
+        }
 
-.nav-logo {
-    width: 100%;
-    max-width: 260px;
-    height: auto;
-}
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-@media (min-width: 900px) {
-    .header-inner {
-        justify-content: flex-start;
-    }
-    .nav-logo {
-        max-width: 360px;
-    }
-}
+        /* LAYOUT WRAPPER */
+        .page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
-/* LAYOUT */
-main {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 22px 16px 60px;
-}
+        .container {
+            width: 100%;
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 1.5rem 1.5rem 4rem;
+        }
 
-/* HERO */
-.hero-topline {
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    color: var(--muted);
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
+        /* HEADER / NAVIGATION */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            backdrop-filter: blur(16px);
+            background: linear-gradient(to bottom, rgba(246,243,255,0.92), rgba(246,243,255,0.75), transparent);
+            border-bottom: 1px solid rgba(224,221,243,0.8);
+        }
 
-.hero-shell {
-    position: relative;
-    border-radius: 26px;
-    padding: 28px 24px;
-    background:
-        radial-gradient(circle at top left, rgba(255,216,196,0.85) 0, transparent 55%),
-        radial-gradient(circle at top right, rgba(200,218,255,0.9) 0, transparent 55%),
-        linear-gradient(to bottom, #fdfbff, #f7f4ff);
-    border: 1px solid rgba(255,255,255,0.9);
-    box-shadow: 0 24px 60px rgba(34,16,64,0.14);
-    overflow: hidden;
-}
+        .site-header-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
 
-.hero-shell::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 15% 120%, rgba(244,79,124,0.35), transparent 65%);
-    opacity: 0.55;
-    pointer-events: none;
-}
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
 
-.hero {
-    position: relative;
-    display: grid;
-    gap: 26px;
-    z-index: 1;
-}
+        .brand-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: radial-gradient(circle at 20% 0, #ffffff 0, #f6f3ff 35%, #e0ddf3 70%, #c9c2f0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow:
+                0 10px 25px rgba(23, 8, 56, 0.16),
+                0 0 0 1px rgba(255,255,255,0.9);
+        }
 
-@media (min-width: 960px) {
-    .hero {
-        grid-template-columns: minmax(0,2.2fr) minmax(0,1.6fr);
-        align-items: stretch;
-    }
-}
+        .brand-logo span {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+            letter-spacing: 0.02em;
+        }
 
-.hero-title {
-    font-size: clamp(2.0rem, 3.3vw, 2.7rem);
-    font-weight: 800;
-    color: var(--primary);
-    line-height: 1.25;
-    letter-spacing: -0.01em;
-}
-.hero-title span {
-    background: linear-gradient(90deg, var(--accent-orange), var(--accent-pink), var(--accent-blue));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
+        .brand-text .brand-name {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--primary);
+        }
 
-.hero-subtext {
-    margin-top: 16px;
-    color: var(--muted);
-    max-width: 42rem;
-    font-size: 0.98rem;
-}
+        .brand-text .brand-sub {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
 
-.hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 22px;
-}
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+        }
 
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 11px 22px;
-    border-radius: 999px;
-    border: 1px solid transparent;
-    font-size: 0.94rem;
-    font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: transform 0.14s ease-out, box-shadow 0.14s ease-out, background 0.14s ease-out, color 0.14s ease-out;
-}
+        .header-contact {
+            display: none;
+        }
 
-.btn-primary {
-    background: linear-gradient(90deg, var(--accent-orange), var(--accent-pink), var(--accent-purple));
-    color: #fff;
-    box-shadow: 0 14px 32px rgba(244, 79, 124, 0.45);
-}
-.btn-primary:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 18px 40px rgba(244,79,124,0.55);
-}
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.35rem;
+            padding: 0.55rem 1.1rem;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.18s ease-out;
+            background: transparent;
+        }
 
-.btn-secondary {
-    background: rgba(255,255,255,0.96);
-    color: var(--primary);
-    border-color: rgba(246,235,255,0.9);
-}
-.btn-secondary:hover {
-    background: #fff;
-    box-shadow: 0 10px 26px rgba(40,24,88,0.18);
-    transform: translateY(-1px);
-}
+        .btn-primary {
+            background-image: linear-gradient(135deg,
+                var(--accent-orange),
+                var(--accent-pink),
+                var(--accent-purple));
+            color: #ffffff;
+            box-shadow:
+                0 10px 28px rgba(141, 52, 112, 0.42),
+                0 0 0 1px rgba(255,255,255,0.65);
+        }
 
-.hero-note {
-    margin-top: 12px;
-    font-size: 0.8rem;
-    color: var(--muted);
-}
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow:
+                0 14px 32px rgba(141, 52, 112, 0.55),
+                0 0 0 1px rgba(255,255,255,0.7);
+        }
 
-/* HIGHLIGHT CARD */
-.highlight-card {
-    background:
-        radial-gradient(circle at top left, rgba(255,240,225,0.9) 0, transparent 55%),
-        radial-gradient(circle at bottom right, rgba(212,222,255,0.9) 0, transparent 55%),
-        rgba(255,255,255,0.96);
-    border-radius: 20px;
-    padding: 18px 20px 16px;
-    border: 1px solid rgba(255,255,255,0.9);
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.7);
-}
+        .btn-outline {
+            border-color: rgba(76, 64, 133, 0.28);
+            background: rgba(255,255,255,0.5);
+            color: var(--primary-soft);
+        }
 
-.highlight-title {
-    font-size: 0.88rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 10px;
-}
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.9);
+            border-color: rgba(76, 64, 133, 0.5);
+        }
 
-.highlight-text {
-    font-size: 0.9rem;
-    color: #392f4f;
-    margin-bottom: 14px;
-}
+        /* HERO SECTION */
+        .hero {
+            padding: 2.5rem 0 3rem;
+        }
 
-.chip-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 8px;
-}
+        .hero-grid {
+            display: grid;
+            gap: 2rem;
+        }
 
-.chip {
-    font-size: 0.78rem;
-    padding: 4px 11px;
-    border-radius: 999px;
-    background: rgba(255,255,255,0.95);
-    border: 1px solid rgba(222,214,255,0.9);
-    color: #3a3453;
-}
+        .hero-main {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
 
-/* SECTION WRAPPER */
-.section {
-    margin-top: 42px;
-}
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 999px;
+            padding: 0.25rem 0.65rem 0.25rem 0.25rem;
+            border: 1px solid rgba(161, 160, 190, 0.4);
+            background: linear-gradient(135deg,
+                rgba(255,255,255,0.95),
+                rgba(246,243,255,0.9));
+            font-size: 0.76rem;
+            color: var(--muted);
+        }
 
-.section-label {
-    font-size: 0.75rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 4px;
-}
+        .hero-badge-dot {
+            width: 18px;
+            height: 18px;
+            border-radius: 999px;
+            background: radial-gradient(circle at 30% 0,
+                #ffffff 0,
+                #ffb88a 45%,
+                #ff6a3d 90%);
+            box-shadow: 0 0 0 4px rgba(255,153,110,0.4);
+        }
 
-.section h2 {
-    font-size: 1.35rem;
-    color: var(--primary);
-    margin-bottom: 8px;
-}
+        .hero-title {
+            font-size: 2rem;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+        }
 
-.section-lead {
-    font-size: 0.96rem;
-    color: var(--muted);
-    margin-bottom: 16px;
-}
+        .gradient-text {
+            background: linear-gradient(120deg,
+                var(--accent-orange),
+                var(--accent-pink),
+                var(--accent-purple),
+                var(--accent-blue));
+            background-size: 180% 180%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
 
-/* CARDS */
-.card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    padding: 20px;
-    border-radius: 16px;
-    margin-bottom: 14px;
-    box-shadow: 0 14px 30px rgba(26,19,68,0.06);
-}
+        .hero-subline {
+            font-size: 1rem;
+            color: var(--muted);
+            max-width: 32rem;
+        }
 
-.card h3 {
-    margin-bottom: 6px;
-    color: var(--primary-soft);
-}
+        .hero-support-line {
+            font-size: 0.88rem;
+            color: var(--muted);
+        }
 
-ul { padding-left: 20px; }
-li + li { margin-top: 4px; }
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
 
-/* Alte Image-Grid (nicht mehr genutzt, kann bleiben) */
-.image-grid {
-    margin-top: 22px;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0,1fr));
-    gap: 14px;
-}
-.image-grid img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 16px;
-    border: 1px solid rgba(224,221,243,0.95);
-    box-shadow: 0 14px 30px rgba(24,17,60,0.12);
-    background: #f1edff;
-}
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1.25rem;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
 
-/* NEUE EINBLICKE-GRID */
-.insights-grid {
-    margin-top: 22px;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0,1fr));
-    gap: 14px;
-}
+        .hero-meta-block {
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+        }
 
-.insight-column h3 {
-    font-size: 0.95rem;
-    margin-bottom: 6px;
-    color: var(--primary-soft);
-}
+        .hero-meta-label {
+            text-transform: uppercase;
+            letter-spacing: 0.09em;
+            font-size: 0.7rem;
+            color: #8a88aa;
+        }
 
-.insight-images {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+        .hero-meta-value {
+            font-weight: 500;
+            color: var(--text);
+        }
 
-.insight-images img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 16px;
-    border: 1px solid rgba(224,221,243,0.95);
-    box-shadow: 0 14px 30px rgba(24,17,60,0.12);
-    background: #f1edff;
-}
+        .hero-side {
+            border-radius: 1.5rem;
+            padding: 1.25rem 1.1rem;
+            background: radial-gradient(circle at top left,
+                rgba(255,255,255,1) 0,
+                rgba(248,245,255,0.98) 36%,
+                rgba(232,225,255,0.98) 100%);
+            box-shadow:
+                0 18px 45px rgba(36, 10, 77, 0.18),
+                0 0 0 1px rgba(255,255,255,0.9);
+            border: 1px solid rgba(210,205,245,0.9);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
 
-@media (max-width: 720px) {
-    .image-grid {
-        grid-template-columns: repeat(2, minmax(0,1fr));
-    }
+        .hero-side-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+        }
 
-    .insights-grid {
-        grid-template-columns: minmax(0,1fr);
-    }
-}
+        .hero-side-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-soft);
+        }
 
-/* KONTAKT */
-.contact-card {
-    margin-top: 40px;
-    padding: 20px 20px 18px;
-    background: var(--card);
-    border-radius: 18px;
-    border: 1px solid var(--border);
-    box-shadow: 0 14px 30px rgba(15,23,42,0.06);
-}
+        .hero-side-chip {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            background: rgba(64, 170, 120, 0.07);
+            color: #2b7a4b;
+            border: 1px solid rgba(64, 170, 120, 0.24);
+        }
 
-/* FOOTER */
-footer {
-    margin-top: 52px;
-    padding: 26px 20px 30px;
-    background: #fdfcff;
-    border-top: 1px solid rgba(224,221,243,0.9);
-}
+        .hero-side-body {
+            font-size: 0.82rem;
+            color: var(--muted);
+        }
 
-.footer-inner {
-    max-width: 1120px;
-    margin: 0 auto;
-    text-align: center;
-    color: var(--muted);
-    font-size: 0.86rem;
-}
+        .hero-side-list {
+            list-style: none;
+            display: grid;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            font-size: 0.82rem;
+        }
 
-.footer-links {
-    margin-top: 8px;
-    font-size: 0.92rem;
-}
+        .hero-side-list li {
+            display: flex;
+            gap: 0.5rem;
+            align-items: flex-start;
+        }
 
-.footer-links a {
-    color: var(--primary);
-    font-weight: 600;
-    text-decoration: none;
-    margin: 0 6px;
-}
-.footer-links a:hover {
-    text-decoration: underline;
-}
+        .hero-side-list .dot {
+            margin-top: 0.3rem;
+            width: 7px;
+            height: 7px;
+            border-radius: 999px;
+            background: linear-gradient(135deg,
+                var(--accent-pink),
+                var(--accent-purple));
+            flex-shrink: 0;
+        }
 
-/* MOBILE: zentrierter Text */
-@media (max-width: 900px) {
-    body, main, section, .card, .hero, .hero-shell, .highlight-card, footer {
-        text-align: center;
-    }
+        .hero-side-footer {
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px dashed rgba(164,158,214,0.6);
+            display: flex;
+            justify-content: space-between;
+            gap: 0.75rem;
+            align-items: center;
+            font-size: 0.78rem;
+            color: var(--muted);
+        }
 
-    /* Listen lesbar lassen, aber mittig platzieren */
-    ul {
-        display: inline-block;
-        text-align: left;
-        margin: 0 auto;
-    }
+        .hero-side-highlight {
+            font-weight: 600;
+            color: var(--primary-soft);
+        }
 
-    .hero-buttons {
-        justify-content: center;
-    }
+        /* SECTION GENERIC */
+        section {
+            padding: 2rem 0 0;
+        }
 
-    .chip-row {
-        justify-content: center;
-    }
-}
-</style>
+        .section-header {
+            margin-bottom: 1.25rem;
+        }
+
+        .section-kicker {
+            font-size: 0.78rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #8c89ac;
+            margin-bottom: 0.3rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--primary-soft);
+            margin-bottom: 0.3rem;
+        }
+
+        .section-sub {
+            font-size: 0.9rem;
+            color: var(--muted);
+            max-width: 40rem;
+        }
+
+        /* SCHWERPUNKTE */
+        .focus-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .focus-card {
+            border-radius: 1.1rem;
+            padding: 1rem 1.1rem;
+            background: rgba(255,255,255,0.94);
+            border: 1px solid rgba(215,210,245,0.9);
+            box-shadow:
+                0 12px 28px rgba(27, 9, 69, 0.12),
+                0 0 0 1px rgba(255,255,255,0.8);
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .focus-card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+        }
+
+        .focus-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 999px;
+            background: radial-gradient(circle at 30% 0,
+                #ffffff 0,
+                #e0ddf3 45%,
+                #c6bef0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: var(--primary-soft);
+        }
+
+        .focus-title {
+            font-size: 0.96rem;
+            font-weight: 600;
+            color: var(--primary-soft);
+        }
+
+        .focus-body {
+            font-size: 0.86rem;
+            color: var(--muted);
+        }
+
+        .focus-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            margin-top: 0.35rem;
+        }
+
+        .focus-tag {
+            font-size: 0.72rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 999px;
+            background: rgba(246,243,255,0.9);
+            border: 1px solid rgba(210,205,245,0.7);
+            color: #5d5a84;
+        }
+
+        /* LEISTUNGEN */
+        .services-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .services-col {
+            border-radius: 1.1rem;
+            padding: 1rem 1.1rem;
+            background: #ffffff;
+            border: 1px solid rgba(220,216,246,0.95);
+            box-shadow:
+                0 10px 26px rgba(24, 7, 63, 0.10),
+                0 0 0 1px rgba(255,255,255,0.85);
+        }
+
+        .services-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary-soft);
+            margin-bottom: 0.35rem;
+        }
+
+        .services-text {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-bottom: 0.35rem;
+        }
+
+        .services-list {
+            list-style: none;
+            display: grid;
+            gap: 0.35rem;
+            font-size: 0.84rem;
+            color: var(--text);
+        }
+
+        .services-list li {
+            display: flex;
+            gap: 0.4rem;
+            align-items: flex-start;
+        }
+
+        .services-list span.bullet {
+            margin-top: 0.25rem;
+            width: 6px;
+            height: 6px;
+            border-radius: 999px;
+            background: var(--accent-blue);
+            flex-shrink: 0;
+        }
+
+        /* EINBLICKE / BILDER – Struktur belassen */
+        .insights-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .insight-card {
+            border-radius: 1.1rem;
+            overflow: hidden;
+            background: #ffffff;
+            border: 1px solid rgba(220,216,246,0.9);
+            box-shadow:
+                0 12px 28px rgba(31, 9, 70, 0.12),
+                0 0 0 1px rgba(255,255,255,0.85);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .insight-image {
+            aspect-ratio: 4 / 3;
+            background: #ddd;
+            overflow: hidden;
+        }
+
+        .insight-body {
+            padding: 0.8rem 0.9rem 0.9rem;
+            font-size: 0.83rem;
+            color: var(--muted);
+        }
+
+        .insight-title {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--primary-soft);
+            margin-bottom: 0.2rem;
+        }
+
+        /* CTA / WARUM WIR */
+        .why-card {
+            margin-top: 1.5rem;
+            border-radius: 1.3rem;
+            padding: 1.1rem 1.1rem 1.2rem;
+            background: linear-gradient(135deg,
+                rgba(39,18,72,0.98),
+                rgba(80,35,135,0.98));
+            color: #f9f6ff;
+            box-shadow:
+                0 18px 40px rgba(19, 4, 48, 0.75),
+                0 0 0 1px rgba(255,255,255,0.15);
+        }
+
+        .why-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            align-items: flex-start;
+            margin-bottom: 0.8rem;
+        }
+
+        .why-title {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .why-badge {
+            font-size: 0.72rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+        }
+
+        .why-grid {
+            display: grid;
+            gap: 0.35rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.84rem;
+        }
+
+        .why-item {
+            display: flex;
+            gap: 0.4rem;
+            align-items: flex-start;
+        }
+
+        .why-item span.icon {
+            width: 14px;
+            margin-top: 0.08rem;
+            text-align: center;
+        }
+
+        .why-footer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: rgba(249,246,255,0.8);
+        }
+
+        /* KONTAKT */
+        .contact-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .contact-card {
+            border-radius: 1.1rem;
+            padding: 1rem 1.1rem;
+            background: #ffffff;
+            border: 1px solid rgba(220,216,246,0.95);
+            box-shadow:
+                0 8px 20px rgba(22, 8, 56, 0.12),
+                0 0 0 1px rgba(255,255,255,0.9);
+            font-size: 0.86rem;
+            color: var(--muted);
+        }
+
+        .contact-block {
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-soft);
+            margin-bottom: 0.12rem;
+        }
+
+        .contact-value a {
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            text-decoration-thickness: 1px;
+        }
+
+        .contact-hint {
+            font-size: 0.78rem;
+            color: #8c89ac;
+            margin-top: 0.4rem;
+        }
+
+        .contact-form {
+            border-radius: 1.1rem;
+            padding: 1rem 1.1rem;
+            background: radial-gradient(circle at top left,
+                #ffffff 0,
+                #f7f3ff 40%,
+                #ebe6ff 100%);
+            border: 1px solid rgba(210,205,245,0.95);
+            box-shadow:
+                0 10px 26px rgba(19, 6, 53, 0.16),
+                0 0 0 1px rgba(255,255,255,0.9);
+        }
+
+        .form-grid {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+        }
+
+        .form-label {
+            font-size: 0.8rem;
+            color: var(--primary-soft);
+        }
+
+        .form-input,
+        .form-textarea,
+        .form-select {
+            border-radius: 0.7rem;
+            border: 1px solid rgba(184,179,226,0.9);
+            padding: 0.4rem 0.6rem;
+            font-size: 0.85rem;
+            font-family: inherit;
+            outline: none;
+            background: rgba(255,255,255,0.9);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            border-color: var(--accent-purple);
+            box-shadow: 0 0 0 1px rgba(139,74,223,0.3);
+            background: #ffffff;
+        }
+
+        .form-textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .form-row-inline {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .form-footer {
+            margin-top: 0.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #736fa0;
+        }
+
+        .form-note {
+            max-width: 16rem;
+        }
+
+        /* FOOTER */
+        .site-footer {
+            border-top: 1px solid rgba(210,205,245,0.9);
+            margin-top: auto;
+        }
+
+        .site-footer-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: space-between;
+            font-size: 0.78rem;
+            color: #8c89ac;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .footer-links a {
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            text-decoration-thickness: 1px;
+        }
+
+        /* RESPONSIVE */
+        @media (min-width: 720px) {
+            .container {
+                padding-top: 2.25rem;
+            }
+
+            .hero {
+                padding-top: 3rem;
+            }
+
+            .hero-grid {
+                grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+                align-items: center;
+            }
+
+            .hero-title {
+                font-size: 2.4rem;
+            }
+
+            .hero-subline {
+                font-size: 1.02rem;
+            }
+
+            section {
+                padding-top: 2.5rem;
+            }
+
+            .focus-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .insights-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .contact-grid {
+                grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+                align-items: flex-start;
+            }
+
+            .form-row-inline {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .header-contact {
+                display: block;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .site-header-inner {
+                padding-inline: 1rem;
+            }
+            .container {
+                padding-inline: 1rem;
+            }
+            .hero-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
+<div class="page">
 
-<header>
-    <div class="header-inner">
-        <img src="logo.png" class="nav-logo" alt="Lopes Facility & Support Services">
-    </div>
-</header>
-
-<main>
-
-    <div class="hero-topline">
-        DIENSTLEISTUNGEN FÜR UNTERNEHMEN, BAUSTELLEN &amp; IMMOBILIEN
-    </div>
-
-    <section class="hero-shell" aria-labelledby="hero-title">
-        <div class="hero">
-            <!-- linke Seite -->
-            <div>
-                <h1 class="hero-title" id="hero-title">
-                    Saubere Container, klare Flächen.<br>
-                    Damit Ihr Projekt <span>ruhig läuft.</span>
-                </h1>
-
-                <p class="hero-subtext">
-                    Lopes Facility &amp; Support Services übernimmt Unterhalts-, Sanitär- und Baureinigung
-                    sowie einfachen Betriebssupport für Baustellen, Containeranlagen und kleinere Betriebe
-                    im Raum Basel. Planbar, verlässlich und ohne Experimente.
-                </p>
-
-                <div class="hero-buttons">
-                    <a href="mailto:info@lopes-facility.ch?subject=Offertanfrage" class="btn btn-primary">
-                        Offerte anfragen
-                    </a>
-                    <a href="#kontakt" class="btn btn-secondary">
-                        Verfügbarkeit prüfen
-                    </a>
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="site-header-inner">
+            <div class="brand">
+                <div class="brand-logo">
+                    <span>L</span>
                 </div>
-
-                <p class="hero-note">
-                    Einsätze hauptsächlich im Raum Basel &amp; Umgebung · Projektbezogene und laufende Einsätze möglich.
-                </p>
-            </div>
-
-            <!-- rechte Seite: Schwerpunkte -->
-            <aside class="highlight-card">
-                <div class="highlight-title">Schwerpunkte</div>
-                <p class="highlight-text">
-                    Unterstützung dort, wo eine saubere und funktionierende Infrastruktur die Basis für den laufenden
-                    Betrieb ist – insbesondere bei temporären Anlagen, Baustellen und kleineren Geschäftseinheiten.
-                </p>
-
-                <div class="chip-row">
-                    <span class="chip">Unterhaltsreinigung</span>
-                    <span class="chip">Sanitär- &amp; Bürocontainer</span>
-                    <span class="chip">Baureinigung</span>
-                    <span class="chip">Objekt- &amp; Betriebssupport</span>
-                    <span class="chip">Logistikunterstützung</span>
-                </div>
-
-                <div class="chip-row">
-                    <span class="chip">Planbare Intervalle</span>
-                    <span class="chip">Projektbezogene Einsätze</span>
-                </div>
-            </aside>
-        </div>
-    </section>
-
-    <!-- LEISTUNGEN -->
-    <section class="section" aria-labelledby="leistungen">
-        <div class="section-label">Leistungen</div>
-        <h2 id="leistungen">Was wir für Ihren Betrieb übernehmen</h2>
-        <p class="section-lead">
-            Fokus auf saubere, funktionierende Infrastruktur – speziell für Baustellen, Containeranlagen
-            und kleinere Geschäftseinheiten im Raum Basel.
-        </p>
-
-        <div class="card">
-            <h3>Unterhaltsreinigung</h3>
-            <ul>
-                <li>Laufende Reinigung von Büro- und Sozialräumen</li>
-                <li>Boden-, Sanitär- und Oberflächenreinigung</li>
-                <li>Reinigung von Eingangs- und Verkehrsflächen</li>
-                <li>Individuelle Intervalle (täglich, wöchentlich, projektbezogen)</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>Sanitär- &amp; Containerreinigung</h3>
-            <ul>
-                <li>Reinigung von Sanitär- und WC-Containern auf Baustellen</li>
-                <li>Büro- und Aufenthaltscontainer inkl. Küchenbereiche</li>
-                <li>Auffüllen von Verbrauchsmaterial nach Vereinbarung</li>
-                <li>Dokumentierte Einsätze für Bauleitung / Projektleitung</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>Baureinigung &amp; Betriebssupport</h3>
-            <ul>
-                <li>Grobreinigung während der Bauphase</li>
-                <li>Feinreinigung vor Übergabe / Abnahme</li>
-                <li>Einfache Materialbereitstellung und kleinere Transportwege</li>
-                <li>Praktische Unterstützung für Betrieb &amp; Organisation vor Ort</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- ÜBER UNS -->
-    <section class="section" aria-labelledby="about">
-        <div class="section-label">Über uns</div>
-        <h2 id="about">Lopes Facility &amp; Support Services</h2>
-        <div class="card">
-            <p>
-                Lopes Facility &amp; Support Services bietet professionelle Reinigungs-, Support- und
-                Logistikdienstleistungen für Unternehmen, Baustellen und Immobilien in der Region Basel
-                und Umgebung an. Das Unternehmen unterstützt Kunden mit zuverlässigen und flexiblen
-                Dienstleistungen in den Bereichen Unterhaltsreinigung, Sanitärcontainer-Reinigung,
-                Baureinigung sowie allgemeinem Objekt- und Betriebssupport.
-            </p>
-            <p>
-                Ein zusätzlicher Schwerpunkt liegt auf logistischen Unterstützungstätigkeiten wie
-                Materialbereitstellung, einfachen Transportaufgaben auf Baustellen, Koordination vor Ort
-                und organisatorischen Unterstützungsleistungen.
-            </p>
-            <p>
-                Durch klare Qualitätsstandards, transparente Prozesse und eine serviceorientierte
-                Arbeitsweise gewährleistet Lopes Facility &amp; Support Services eine effiziente,
-                pünktliche und diskrete Ausführung aller vereinbarten Arbeiten.
-            </p>
-        </div>
-    </section>
-
-    <!-- EINBLICKE (neu mit deinen Bildern) -->
-    <section class="section" aria-labelledby="einblicke">
-        <div class="section-label">Einblicke</div>
-        <h2 id="einblicke">Einblicke in unsere Arbeiten</h2>
-
-        <div class="insights-grid">
-            <!-- Sanitär -->
-            <div class="insight-column">
-                <h3>Sanitär- &amp; WC-Container</h3>
-                <div class="insight-images">
-                    <img src="1.jpg" alt="Reinigung von Sanitär- und WC-Containern">
-                    <img src="2.jpg" alt="Gereinigte Sanitäranlage im Einsatz">
+                <div class="brand-text">
+                    <div class="brand-name">Lopes Facility &amp; Support Services</div>
+                    <div class="brand-sub">Reinigung &amp; Betriebssupport · Basel &amp; Umgebung</div>
                 </div>
             </div>
-
-            <!-- Baureinigung -->
-            <div class="insight-column">
-                <h3>Baureinigung auf der Baustelle</h3>
-                <div class="insight-images">
-                    <img src="3.jpg" alt="Baureinigung im Rohbau, Bodenreinigung">
-                    <img src="4.jpg" alt="Gereinigte Rohbaufläche mit offenen Strukturen">
+            <div class="header-actions">
+                <div class="header-contact">
+                    <span style="font-size:0.8rem;color:#8c89ac;">Kontakt:</span>
+                    <span style="font-size:0.82rem;">info@lopes-facility.ch</span>
                 </div>
-            </div>
-
-            <!-- Unterhaltsreinigung -->
-            <div class="insight-column">
-                <h3>Unterhaltsreinigung Innenbereiche</h3>
-                <div class="insight-images">
-                    <img src="5.jpg" alt="Glänzender Boden in einem Innenraum">
-                    <img src="6.jpg" alt="Unterhaltsreinigung in einem Aufenthaltsbereich">
-                </div>
+                <a href="#kontakt" class="btn btn-outline">Kontakt</a>
+                <a href="#kontakt" class="btn btn-primary">Offerte anfragen</a>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- KONTAKT -->
-    <section class="contact-card" id="kontakt" aria-labelledby="kontakt-title">
-        <div class="section-label">Kontakt</div>
-        <h2 id="kontakt-title">Kontakt &amp; Einsatzanfrage</h2>
+    <!-- MAIN -->
+    <main>
+        <div class="container">
 
-        <p>
-            Für Offerten, Projektanfragen oder eine kurze Einschätzung zum Aufwand
-            erreichen Sie uns direkt:
-        </p>
+            <!-- HERO -->
+            <section class="hero" id="start">
+                <div class="hero-grid">
 
-        <p><strong>E-Mail:</strong> <a href="mailto:info@lopes-facility.ch">info@lopes-facility.ch</a></p>
-        <p><strong>Telefon:</strong> <a href="tel:+491701523720">+49 170 1523720</a></p>
+                    <div class="hero-main">
+                        <div class="hero-badge">
+                            <div class="hero-badge-dot"></div>
+                            <span>Reinigung &amp; Betriebssupport für Unternehmen und Projekte</span>
+                        </div>
 
-        <p><strong>Adresse:</strong><br>
-            Lopes Facility &amp; Support Services, A. Lopes<br>
-            c/o ExpertFid &amp; Audit AG<br>
-            Marktgasse 8, 4051 Basel
-        </p>
+                        <h1 class="hero-title">
+                            <span class="gradient-text">Saubere Räume. Klare Abläufe.</span>
+                        </h1>
 
-        <p><strong>Typische Einsatzgebiete:</strong><br>
-            Basel, Basel-Land und Umgebung. Weitere Standorte nach Absprache.
-        </p>
+                        <p class="hero-subline">
+                            Reinigung und Betriebssupport für Unternehmen und Projekte in Basel &amp; Umgebung.
+                            Planbare Einsätze, klare Zuständigkeiten und ein Ansprechpartner, der sich kümmert.
+                        </p>
 
-        <p><strong>Öffnungszeiten:</strong><br>
-            Mo–Fr: 08:00–18:00 · Sa: 09:00–15:00
-        </p>
-    </section>
+                        <p class="hero-support-line">
+                            Unterhaltsreinigung, Sanitär- und Hygienereinigung, Baureinigung sowie Objekt- und Betriebssupport –
+                            mit Fokus auf das, was im Alltag tatsächlich gebraucht wird.
+                        </p>
 
-</main>
+                        <div class="hero-actions">
+                            <a href="#kontakt" class="btn btn-primary">
+                                Offerte anfragen
+                            </a>
+                            <a href="#kontakt" class="btn btn-outline">
+                                Rückruf vereinbaren
+                            </a>
+                        </div>
 
-<footer>
-    <div class="footer-inner">
-        © 2025 Lopes Facility &amp; Support Services · Basel &amp; Umgebung
-        <div class="footer-links">
-            <a href="impressum.html">Impressum</a> ·
-            <a href="datenschutz.html">Datenschutz</a>
+                        <div class="hero-meta">
+                            <div class="hero-meta-block">
+                                <div class="hero-meta-label">Region</div>
+                                <div class="hero-meta-value">Basel &amp; Umgebung</div>
+                            </div>
+                            <div class="hero-meta-block">
+                                <div class="hero-meta-label">Einsatzbereiche</div>
+                                <div class="hero-meta-value">Unternehmen, Projekte, Immobilien, Baustellen</div>
+                            </div>
+                            <div class="hero-meta-block">
+                                <div class="hero-meta-label">Schwerpunkt</div>
+                                <div class="hero-meta-value">Reinigung &amp; praktischer Support vor Ort</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <aside class="hero-side">
+                        <div class="hero-side-header">
+                            <div class="hero-side-title">Was Sie von uns erwarten können</div>
+                            <div class="hero-side-chip">Planbar &amp; verlässlich</div>
+                        </div>
+                        <div class="hero-side-body">
+                            Wir kombinieren regelmäßige Reinigung mit praktischem Betriebssupport vor Ort:
+                            klare Intervalle, kurze Wege und saubere Infrastruktur.
+                        </div>
+                        <ul class="hero-side-list">
+                            <li>
+                                <div class="dot"></div>
+                                <div>Unterhaltsreinigung von Büros, Aufenthalts- und Sanitärbereichen.</div>
+                            </li>
+                            <li>
+                                <div class="dot"></div>
+                                <div>Reinigung in Bau- und Umbauphasen sowie temporären Einrichtungen.</div>
+                            </li>
+                            <li>
+                                <div class="dot"></div>
+                                <div>Objektbetreuung und kleine Unterstützungsleistungen, damit der Betrieb läuft.</div>
+                            </li>
+                        </ul>
+                        <div class="hero-side-footer">
+                            <div>
+                                <span class="hero-side-highlight">Kontakt auf Augenhöhe</span><br>
+                                Direkter Draht statt Hotline – klar abgesprochene Einsätze.
+                            </div>
+                            <div>
+                                <span style="font-size:0.75rem;">Einsatzgebiet:</span><br>
+                                <span style="font-size:0.8rem;">Basel &amp; Umgebung</span>
+                            </div>
+                        </div>
+                    </aside>
+
+                </div>
+            </section>
+
+            <!-- SCHWERPUNKTE -->
+            <section id="schwerpunkte">
+                <div class="section-header">
+                    <div class="section-kicker">Schwerpunkte</div>
+                    <h2 class="section-title">Reinigung &amp; Support, wo es gebraucht wird</h2>
+                    <p class="section-sub">
+                        Wir arbeiten dort, wo Sauberkeit und funktionierende Abläufe direkt in den Alltag greifen:
+                        bei Unternehmen, Projekten, Immobilien und Baustellen mit realen Anforderungen statt Hochglanzbroschüren.
+                    </p>
+                </div>
+
+                <div class="focus-grid">
+                    <article class="focus-card">
+                        <div class="focus-card-header">
+                            <div class="focus-icon">🏢</div>
+                            <div class="focus-title">Reinigung für Unternehmen &amp; Betriebe</div>
+                        </div>
+                        <p class="focus-body">
+                            Büros, Gewerbeflächen, Aufenthaltsräume und Sanitärbereiche:
+                            planbare Unterhaltsreinigung mit klar definierten Intervallen.
+                        </p>
+                        <div class="focus-tags">
+                            <span class="focus-tag">Unterhaltsreinigung</span>
+                            <span class="focus-tag">Büros &amp; Sozialräume</span>
+                            <span class="focus-tag">Sanitärbereiche</span>
+                        </div>
+                    </article>
+
+                    <article class="focus-card">
+                        <div class="focus-card-header">
+                            <div class="focus-icon">📂</div>
+                            <div class="focus-title">Projekt- &amp; Objektbetreuung</div>
+                        </div>
+                        <p class="focus-body">
+                            Unterstützung für Projekte und Objekte:
+                            Kontrolle, Ordnung, Materialbestückung und kleine Arbeiten, die intern oft „liegen bleiben“.
+                        </p>
+                        <div class="focus-tags">
+                            <span class="focus-tag">Objektbetreuung</span>
+                            <span class="focus-tag">Betriebssupport</span>
+                            <span class="focus-tag">Kontrolle &amp; Ordnung</span>
+                        </div>
+                    </article>
+
+                    <article class="focus-card">
+                        <div class="focus-card-header">
+                            <div class="focus-icon">🚧</div>
+                            <div class="focus-title">Baustellen- &amp; Übergangsphasen</div>
+                        </div>
+                        <p class="focus-body">
+                            Reinigung in Bau- und Umbauphasen, temporäre Einrichtungen und Übergaben:
+                            vom groben Schmutz bis zur sauberen Übergabe an Nutzer oder Eigentümer.
+                        </p>
+                        <div class="focus-tags">
+                            <span class="focus-tag">Baureinigung</span>
+                            <span class="focus-tag">Übergaben</span>
+                            <span class="focus-tag">Temporäre Einrichtungen</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- LEISTUNGEN -->
+            <section id="leistungen">
+                <div class="section-header">
+                    <div class="section-kicker">Leistungen</div>
+                    <h2 class="section-title">Was wir konkret übernehmen</h2>
+                    <p class="section-sub">
+                        Klare Leistungen statt schwammiger Versprechen. Wir definieren gemeinsam,
+                        was in welchem Intervall erledigt werden soll – und halten uns daran.
+                    </p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="services-col">
+                        <div class="services-title">Regelmäßige Reinigung</div>
+                        <p class="services-text">
+                            Für laufende Betriebe und Projekte, die sich auf eine saubere Umgebung verlassen müssen.
+                        </p>
+                        <ul class="services-list">
+                            <li><span class="bullet"></span>Unterhaltsreinigung von Büros und Gewerbeflächen</li>
+                            <li><span class="bullet"></span>Reinigung von Aufenthalts- und Pausenräumen</li>
+                            <li><span class="bullet"></span>Sanitär- und Hygienereinigung</li>
+                            <li><span class="bullet"></span>Reinigung von Eingangs- und Verkehrsflächen im Gebäude</li>
+                        </ul>
+                    </div>
+
+                    <div class="services-col">
+                        <div class="services-title">Bau- &amp; Projektphasen</div>
+                        <p class="services-text">
+                            Wenn gebaut, umgebaut oder übergeben wird, braucht es mehr als nur „kurz durchwischen“.
+                        </p>
+                        <ul class="services-list">
+                            <li><span class="bullet"></span>Zwischenreinigung in Bau- und Umbauphasen</li>
+                            <li><span class="bullet"></span>Grob- und Feinreinigung vor Übergaben</li>
+                            <li><span class="bullet"></span>Reinigung temporärer Einrichtungen und Infrastruktur</li>
+                            <li><span class="bullet"></span>Bedarfsorientierte Einsätze nach Absprache</li>
+                        </ul>
+                    </div>
+
+                    <div class="services-col">
+                        <div class="services-title">Objekt- &amp; Betriebssupport</div>
+                        <p class="services-text">
+                            Praktische Unterstützung dort, wo interne Kapazitäten oder schlicht die Zeit fehlen.
+                        </p>
+                        <ul class="services-list">
+                            <li><span class="bullet"></span>Kontrolle von Räumen und Infrastruktur</li>
+                            <li><span class="bullet"></span>Materialbestückung (z.&nbsp;B. Sanitärverbrauchsmaterial)</li>
+                            <li><span class="bullet"></span>Kleine Unterstützungsleistungen rund um den Betrieb</li>
+                            <li><span class="bullet"></span>Absprachen direkt mit Ansprechpersonen vor Ort</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- WARUM WIR -->
+                <div class="why-card">
+                    <div class="why-header">
+                        <div>
+                            <div class="why-title">Warum Lopes Facility &amp; Support Services?</div>
+                        </div>
+                        <div class="why-badge">Fokus: Funktionierender Alltag</div>
+                    </div>
+                    <div class="why-grid">
+                        <div class="why-item">
+                            <span class="icon">✔</span>
+                            <div>Klare Abläufe ohne Experimente – vereinbarte Leistungen und Intervalle, die eingehalten werden.</div>
+                        </div>
+                        <div class="why-item">
+                            <span class="icon">✔</span>
+                            <div>Schnelle Reaktionszeiten im Raum Basel &amp; Umgebung statt langer Entscheidungswege.</div>
+                        </div>
+                        <div class="why-item">
+                            <span class="icon">✔</span>
+                            <div>Kombination aus Reinigung &amp; praktischem Support vor Ort, statt nur „Reinigungsfirma auf Papier“.</div>
+                        </div>
+                        <div class="why-item">
+                            <span class="icon">✔</span>
+                            <div>Direkte Kommunikation mit einer verantwortlichen Person, nicht über mehrere Stellen verteilt.</div>
+                        </div>
+                    </div>
+                    <div class="why-footer">
+                        <div>Geeignet für Unternehmen, Projekte, Immobilienverwaltungen und Baustellen mit realem Bedarf.</div>
+                        <div><a href="#kontakt" class="btn btn-outline" style="background:rgba(255,255,255,0.95);color:#271248;border-color:rgba(255,255,255,0.5);">Unverbindlichen Austausch anfragen</a></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EINBLICKE / BILDER (Struktur beibehalten) -->
+            <section id="einblicke">
+                <div class="section-header">
+                    <div class="section-kicker">Einblicke</div>
+                    <h2 class="section-title">Aus dem Alltag unserer Einsätze</h2>
+                    <p class="section-sub">
+                        Ein Blick in typische Situationen: Sanitärbereiche, Aufenthaltsräume, Arbeitsflächen und Bereiche,
+                        die im Betrieb oder auf Projekten regelmäßig genutzt werden.
+                    </p>
+                </div>
+
+                <div class="insights-grid">
+                    <article class="insight-card">
+                        <div class="insight-image">
+                            <!-- Dein Bild hier einfügen -->
+                            <img src="images/einblick-1.jpg" alt="Reinigung von Sanitär- und Hygienebereichen">
+                        </div>
+                        <div class="insight-body">
+                            <div class="insight-title">Sanitär- und Hygienebereiche</div>
+                            <p>Regelmäßige Reinigung und Kontrolle von Sanitärbereichen für Mitarbeitende und Nutzer.</p>
+                        </div>
+                    </article>
+
+                    <article class="insight-card">
+                        <div class="insight-image">
+                            <!-- Dein Bild hier einfügen -->
+                            <img src="images/einblick-2.jpg" alt="Unterhaltsreinigung von Aufenthalts- und Pausenräumen">
+                        </div>
+                        <div class="insight-body">
+                            <div class="insight-title">Aufenthalts- und Pausenräume</div>
+                            <p>Unterhaltsreinigung von Bereichen, die täglich genutzt werden und entsprechend gepflegt sein sollen.</p>
+                        </div>
+                    </article>
+
+                    <article class="insight-card">
+                        <div class="insight-image">
+                            <!-- Dein Bild hier einfügen -->
+                            <img src="images/einblick-3.jpg" alt="Reinigung in Bau- und Projektphasen">
+                        </div>
+                        <div class="insight-body">
+                            <div class="insight-title">Bau- &amp; Projektphasen</div>
+                            <p>Reinigung und Ordnung in Übergangsphasen, damit Übergaben und tägliche Abläufe funktionieren.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- KONTAKT -->
+            <section id="kontakt">
+                <div class="section-header">
+                    <div class="section-kicker">Kontakt</div>
+                    <h2 class="section-title">Kontakt für Offerten &amp; Rückfragen</h2>
+                    <p class="section-sub">
+                        Für eine Offerte, einen kurzen Austausch oder eine konkrete Anfrage können Sie uns direkt per E-Mail kontaktieren
+                        oder das Formular nutzen. Wir melden uns zeitnah zurück.
+                    </p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-block">
+                            <div class="contact-label">E-Mail</div>
+                            <div class="contact-value">
+                                <a href="mailto:info@lopes-facility.ch">info@lopes-facility.ch</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-block">
+                            <div class="contact-label">Adresse</div>
+                            <div class="contact-value">
+                                Lopes Facility &amp; Support Services, A. Lopes<br>
+                                Marktgasse 8<br>
+                                4051 Basel<br>
+                                Schweiz
+                            </div>
+                        </div>
+
+                        <div class="contact-block">
+                            <div class="contact-label">Telefon</div>
+                            <div class="contact-value">
+                                <!-- Hier deine gewünschte Nummer eintragen -->
+                                <span>Telefon: +41&nbsp;…</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-hint">
+                            Für eine möglichst passende Offerte helfen Angaben zu Einsatzort, gewünschter Leistung
+                            und Intervallen. Kurze Stichworte genügen.
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <form action="mailto:info@lopes-facility.ch" method="post" enctype="text/plain">
+                            <div class="form-grid">
+                                <div class="form-row-inline">
+                                    <div class="form-field">
+                                        <label class="form-label" for="name">Name</label>
+                                        <input class="form-input" type="text" id="name" name="Name" required>
+                                    </div>
+                                    <div class="form-field">
+                                        <label class="form-label" for="firma">Firma / Projekt</label>
+                                        <input class="form-input" type="text" id="firma" name="Firma / Projekt">
+                                    </div>
+                                </div>
+
+                                <div class="form-row-inline">
+                                    <div class="form-field">
+                                        <label class="form-label" for="einsatzort">Einsatzort</label>
+                                        <input class="form-input" type="text" id="einsatzort" name="Einsatzort" placeholder="z.B. Basel, Umgebung">
+                                    </div>
+                                    <div class="form-field">
+                                        <label class="form-label" for="leistung">Gewünschte Leistung</label>
+                                        <select class="form-select" id="leistung" name="Leistung">
+                                            <option value="">Bitte auswählen</option>
+                                            <option value="Unterhaltsreinigung">Unterhaltsreinigung</option>
+                                            <option value="Sanitär- / Hygienereinigung">Sanitär- / Hygienereinigung</option>
+                                            <option value="Baureinigung / Projektphase">Baureinigung / Projektphase</option>
+                                            <option value="Objekt- &amp; Betriebssupport">Objekt- &amp; Betriebssupport</option>
+                                            <option value="Sonstiges">Sonstiges / Kombination</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-field">
+                                    <label class="form-label" for="nachricht">Kurzbeschreibung &amp; Intervalle</label>
+                                    <textarea class="form-textarea" id="nachricht" name="Nachricht" placeholder="Kurze Beschreibung, gewünschte Intervalle (z.B. wöchentlich, 2x pro Woche, projektbezogen)…"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-footer">
+                                <div class="form-note">
+                                    Mit dem Absenden werden Ihre Angaben per E-Mail an Lopes Facility &amp; Support Services übermittelt.
+                                </div>
+                                <button type="submit" class="btn btn-primary">
+                                    Anfrage senden
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
         </div>
-    </div>
-</footer>
+    </main>
 
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div>© Lopes Facility &amp; Support Services, Basel</div>
+            <div class="footer-links">
+                <span>info@lopes-facility.ch</span>
+                <!-- Bei Bedarf: <a href="#">Impressum</a> · <a href="#">Datenschutz</a> -->
+            </div>
+        </div>
+    </footer>
+
+</div>
 </body>
 </html>
